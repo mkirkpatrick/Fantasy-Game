@@ -1,18 +1,17 @@
 fileFormatVersion: 2
-guid: 592ecff72c5bd1f4785674a6379ba31b
-timeCreated: 1522980234
+guid: 372cc28459775274d96406f5a7006ec2
+timeCreated: 1523253821
 licenseType: Free
 ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
-    100000: 4StepSlope1
-    100002: //RootNode
-    400000: 4StepSlope1
-    400002: //RootNode
-    2100000: palette
-    2300000: 4StepSlope1
-    3300000: 4StepSlope1
-    4300000: 4StepSlope1
+    100000: //RootNode
+    400000: //RootNode
+    2100000: No Name
+    2300000: //RootNode
+    3300000: //RootNode
+    4300000: Straight2-1step-1
+    4300002: Straight2-1step-2
   externalObjects: {}
   materials:
     importMaterials: 1

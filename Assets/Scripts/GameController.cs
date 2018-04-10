@@ -4,13 +4,18 @@ using UnityEngine;
 
 public class GameController : MonoBehaviour {
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+    public static GameController instance = null;
+
+    // Use this for initialization
+    void Awake()
+    {
+        if (instance == null) {
+            instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+            Destroy(this);
+    }
+
+
 }
