@@ -12,7 +12,7 @@ public class Interactable : MonoBehaviour
    */
 
 	private Transform interactor;
-  private Transform interactionTransform;
+    private Transform interactionTransform;
 
 	[SerializeField] private bool isObjectInteractable = true; // Debugging option
 	[SerializeField] private float interactableRadius = 1f; // Distance from item before it is interactable
