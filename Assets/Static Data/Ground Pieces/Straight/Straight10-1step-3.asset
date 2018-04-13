@@ -9,7 +9,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c623db3086e1b8342beaf59db2f2be59, type: 3}
-  m_Name: Straight2-1step-1
+  m_Name: Straight10-1step-3
   m_EditorClassIdentifier: 
-  index: 1
-  groundMesh: {fileID: 4300000, guid: 372cc28459775274d96406f5a7006ec2, type: 3}
+  index: 0
+  groundMesh: {fileID: 4300000, guid: 034ea176d3a660045a548154af785f9c, type: 3}
