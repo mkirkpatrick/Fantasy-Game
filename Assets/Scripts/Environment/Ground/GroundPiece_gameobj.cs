@@ -6,15 +6,13 @@ public class GroundPiece_gameobj : MonoBehaviour {
 
     public GroundPiece groundPieceData;
 
-    public Mesh groundMesh;
-
 	// Use this for initialization
 	void Start () {
-		
+        SetGroundPiece(groundPieceData);
 	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+
+    public void SetGroundPiece(GroundPiece _groundPieceData) {
+        GetComponent<MeshFilter>().mesh = _groundPieceData.groundMesh;
+        GetComponent<MeshRenderer>().material = _groundPieceData.groundMaterial;
+    }
 }

@@ -6,6 +6,8 @@ public class GameController : MonoBehaviour {
 
     public static GameController instance = null;
 
+    public StaticDatabase staticDB;
+
     // Use this for initialization
     void Awake()
     {
@@ -15,6 +17,9 @@ public class GameController : MonoBehaviour {
         }
         else
             Destroy(this);
+    }
+    void Start() {
+
     }
 
 
