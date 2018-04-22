@@ -4,10 +4,15 @@ using UnityEngine;
 
 [System.Serializable]
 public class GroundPiece {
-    public enum GroundType { Straight, Corner };
+    public enum GroundType { Flat, Straight, Corner };
 
-    public GroundType groundType;
     public int index;
+    public GroundType groundType;
     public Mesh groundMesh;
     public Material groundMaterial;
+
+    public GroundPiece(int _index, GroundType _groundType) {
+        index = _index;
+        groundType = _groundType;
+    }
 }

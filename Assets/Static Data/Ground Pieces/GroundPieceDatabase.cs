@@ -6,6 +6,7 @@ using UnityEngine;
 [ExecuteInEditMode]
 public class GroundPieceDatabase : ScriptableObject {
 
+    public GroundPiece[] flatPiece;
     public GroundPiece[] straightPieces;
     public GroundPiece[] cornerPieces;
 
@@ -14,6 +15,9 @@ public class GroundPieceDatabase : ScriptableObject {
 
         switch (_groundType)
         {
+            case GroundPiece.GroundType.Flat:
+                groundArray = flatPiece;
+                break;
             case GroundPiece.GroundType.Straight:
                 groundArray = straightPieces;
                 break;
@@ -22,13 +26,16 @@ public class GroundPieceDatabase : ScriptableObject {
                 break;
         }
 
-        return groundArray[_index];
+        return CloneGroundPiece(groundArray[_index]);
     }
     public int GetGroundTypeIndexMax(GroundPiece.GroundType _groundType) {
         int indexMax = 0;
 
         switch (_groundType)
         {
+            case GroundPiece.GroundType.Flat:
+                indexMax = 0;
+                break;
             case GroundPiece.GroundType.Straight:
                 indexMax = straightPieces.Length - 1;
                 break;
@@ -38,5 +45,14 @@ public class GroundPieceDatabase : ScriptableObject {
         }
 
         return indexMax;
+    }
+
+    private GroundPiece CloneGroundPiece(GroundPiece _groundPiece) {
+
+        GroundPiece newGround = new GroundPiece(_groundPiece.index, _groundPiece.groundType);
+        newGround.groundMaterial = _groundPiece.groundMaterial;
+        newGround.groundMesh = _groundPiece.groundMesh;
+
+        return newGround;
     }
 }

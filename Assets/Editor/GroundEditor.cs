@@ -4,14 +4,19 @@ using UnityEditor;
 public class GroundEditor : EditorWindow {
 
     public GroundPieceDatabase groundDatabase;
+    public Chunk_gameobj chunkObj;
+    private GameObject groundPrefab;
+
     public GroundPiece groundData;
     public int groundIndexMax = 1;
+    public int xScale = 1, zScale = 1;
 
     //GUI Areas
     private Rect topRect;
     private Rect heightRect;
     private Rect positionRect;
     private Rect rotateRect;
+    private Rect scaleRect;
     private Rect groundDataRect;
 
     [MenuItem("My Tools/Ground Editor")]
@@ -20,9 +25,10 @@ public class GroundEditor : EditorWindow {
     }
 
     void Awake() {
-        groundData = new GroundPiece();
+        groundData = new GroundPiece(0, GroundPiece.GroundType.Flat);
         groundData.index = 0;
-        groundData.groundType = GroundPiece.GroundType.Straight;
+
+        groundPrefab = Resources.Load("Prefabs/GroundPiece") as GameObject;
     }
 
     void OnGUI() {
@@ -31,15 +37,30 @@ public class GroundEditor : EditorWindow {
         DrawPosition();
         DrawHeight();
         DrawRotate();
+        DrawScale();
         DrawGroundData();
 
-        if (GUI.changed) {
+        if (GUI.changed)
+        {
             groundData = groundDatabase.GetGroundPiece(groundData.groundType, groundData.index);
             groundIndexMax = groundDatabase.GetGroundTypeIndexMax(groundData.groundType);
             SetSelectedGroundPiece(groundData);
+
+            Vector3 newScale = new Vector3(xScale, 1, zScale);
+            Selection.activeGameObject.transform.localScale = newScale;
         }
     }
-    
+
+    void OnSelectionChange() {
+        if (Selection.activeGameObject != null) {
+            groundData = Selection.activeGameObject.GetComponent<GroundPiece_gameobj>().groundPieceData;
+            xScale = (int)Selection.activeGameObject.transform.localScale.x;
+            zScale = (int)Selection.activeGameObject.transform.localScale.z;
+            Repaint();
+
+        }
+    }
+
     // Draw UI sections
     private void DrawTopSection() {
         topRect = new Rect(2f, 10f, Screen.width - 4f, 100f);
@@ -51,8 +72,26 @@ public class GroundEditor : EditorWindow {
         GUILayout.EndHorizontal();
 
         GUILayout.BeginHorizontal();
-        if (GUI.Button(new Rect( 10f, 20f, 120f, 2), "Create Piece")) {
-                
+        GUILayout.Label("Chunk Target");
+        chunkObj = (Chunk_gameobj)EditorGUILayout.ObjectField(chunkObj, typeof(Chunk_gameobj), true);
+        GUILayout.EndHorizontal();
+
+        GUILayout.BeginHorizontal();
+        if (GUI.Button(new Rect( 10f, 40f, 120f, 20f), "Create Piece")) {
+            Vector3 groundPos = chunkObj.transform.position;
+
+            if (Selection.activeGameObject != null)
+                groundPos = Selection.activeGameObject.transform.position;
+
+            //New pieces have scale of 1
+            xScale = 1;
+            zScale = 1;
+
+            GameObject newGroundPiece = Instantiate(groundPrefab, groundPos, Quaternion.identity, chunkObj.transform);
+            newGroundPiece.name = "GroundPiece";
+            newGroundPiece.GetComponent<GroundPiece_gameobj>().groundPieceData = groundData;
+            
+            Selection.activeGameObject = newGroundPiece;
         }
         GUILayout.EndHorizontal();
 
@@ -145,15 +184,38 @@ public class GroundEditor : EditorWindow {
         }
         GUILayout.EndArea();
     }
+    private void DrawScale() {
+        scaleRect = new Rect(2f, 220f, Screen.width - 4f, 100f);
+        GUILayout.BeginArea(scaleRect);
+
+        GUILayout.Label("Scale");
+        GUILayout.BeginHorizontal();
+        GUILayout.Label("X");
+        xScale = EditorGUILayout.IntSlider(xScale, 1, 20);
+        GUILayout.EndHorizontal();
+
+        GUILayout.BeginHorizontal();
+        GUILayout.Label("Z");
+        zScale = EditorGUILayout.IntSlider(zScale, 1, 20);
+        GUILayout.EndHorizontal();
+
+        GUILayout.EndArea();
+    }
     private void DrawGroundData() {
-        groundDataRect = new Rect(2f, 230f, Screen.width - 4f, 100f);
+        groundDataRect = new Rect(2f, 280f, Screen.width - 4f, 100f);
         GUILayout.BeginArea(groundDataRect);
 
         GUILayout.Label("Ground Data");
 
         GUILayout.BeginHorizontal();
         GUILayout.Label("Type");
-        groundData.groundType = (GroundPiece.GroundType)EditorGUILayout.EnumPopup(groundData.groundType);
+        GroundPiece.GroundType newValue = (GroundPiece.GroundType)EditorGUILayout.EnumPopup(groundData.groundType);
+
+        if (newValue != groundData.groundType) {
+            groundData.groundType = newValue;
+            groundData.index = 0;
+        }
+
         GUILayout.EndHorizontal();
 
         GUILayout.BeginHorizontal();

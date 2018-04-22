@@ -11,17 +11,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0642ecc1ff240d945baf12a7c512fc65, type: 3}
   m_Name: Ground Database
   m_EditorClassIdentifier: 
+  flatPiece:
+  - index: 0
+    groundType: 0
+    groundMesh: {fileID: 4300000, guid: e630a833db7cac943b9b2da534afcaa8, type: 3}
+    groundMaterial: {fileID: 2100000, guid: 01eb8e54c09145547be2a9a3a69cdbd3, type: 2}
   straightPieces:
-  - groundType: 0
-    index: 0
+  - index: 0
+    groundType: 1
     groundMesh: {fileID: 4300000, guid: 372cc28459775274d96406f5a7006ec2, type: 3}
     groundMaterial: {fileID: 2100000, guid: 01eb8e54c09145547be2a9a3a69cdbd3, type: 2}
-  - groundType: 0
-    index: 1
+  - index: 1
+    groundType: 1
     groundMesh: {fileID: 4300000, guid: ac297651a72fc7843b9b5dbdcd66e8ce, type: 3}
     groundMaterial: {fileID: 2100000, guid: 01eb8e54c09145547be2a9a3a69cdbd3, type: 2}
-  - groundType: 0
-    index: 2
+  - index: 2
+    groundType: 1
     groundMesh: {fileID: 4300000, guid: 80035e4ef6f71b9428b38efe5f7a7c9d, type: 3}
     groundMaterial: {fileID: 2100000, guid: 01eb8e54c09145547be2a9a3a69cdbd3, type: 2}
-  cornerPieces: []
+  cornerPieces:
+  - index: 0
+    groundType: 1
+    groundMesh: {fileID: 0}
+    groundMaterial: {fileID: 0}

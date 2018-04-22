@@ -15,4 +15,8 @@ public class Chunk_gameobj : MonoBehaviour {
 	void Update () {
 		
 	}
+
+    void OnDrawGizmosSelected() {
+        Gizmos.DrawCube(transform.position, new Vector3(100, 5, 100));
+    }
 }
