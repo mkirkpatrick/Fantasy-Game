@@ -4,7 +4,7 @@ using UnityEngine;
 
 [System.Serializable]
 public class GroundPiece {
-    public enum GroundType { Flat, Straight, Corner };
+    public enum GroundType { Flat, Straight, Corner, Slant };
 
     public int index;
     public GroundType groundType;

@@ -8,7 +8,10 @@ public class Chunk_gameobj : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		
+        foreach (Transform ground in transform) {
+            if (ground.name == "GroundPiece")
+                ground.gameObject.AddComponent<MeshCollider>();
+        }
 	}
 	
 	// Update is called once per frame
@@ -17,6 +20,6 @@ public class Chunk_gameobj : MonoBehaviour {
 	}
 
     void OnDrawGizmosSelected() {
-        Gizmos.DrawCube(transform.position, new Vector3(100, 5, 100));
+        //Gizmos.DrawCube(transform.position, new Vector3(100, 5, 100));
     }
 }

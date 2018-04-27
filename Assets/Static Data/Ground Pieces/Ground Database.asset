@@ -19,18 +19,183 @@ MonoBehaviour:
   straightPieces:
   - index: 0
     groundType: 1
-    groundMesh: {fileID: 4300000, guid: 372cc28459775274d96406f5a7006ec2, type: 3}
+    groundMesh: {fileID: 4300000, guid: b4c4e676e0c85074190e7c9b92434815, type: 3}
     groundMaterial: {fileID: 2100000, guid: 01eb8e54c09145547be2a9a3a69cdbd3, type: 2}
   - index: 1
     groundType: 1
-    groundMesh: {fileID: 4300000, guid: ac297651a72fc7843b9b5dbdcd66e8ce, type: 3}
+    groundMesh: {fileID: 4300000, guid: 52f9ae760fcbc314f9e4bbf3da59d698, type: 3}
     groundMaterial: {fileID: 2100000, guid: 01eb8e54c09145547be2a9a3a69cdbd3, type: 2}
   - index: 2
     groundType: 1
-    groundMesh: {fileID: 4300000, guid: 80035e4ef6f71b9428b38efe5f7a7c9d, type: 3}
+    groundMesh: {fileID: 4300000, guid: b1e40a3fe44ff4b419608658e108b9fc, type: 3}
+    groundMaterial: {fileID: 2100000, guid: 01eb8e54c09145547be2a9a3a69cdbd3, type: 2}
+  - index: 3
+    groundType: 1
+    groundMesh: {fileID: 4300000, guid: e578188b547200f468fea233d30c9f5a, type: 3}
+    groundMaterial: {fileID: 2100000, guid: 01eb8e54c09145547be2a9a3a69cdbd3, type: 2}
+  - index: 4
+    groundType: 1
+    groundMesh: {fileID: 4300000, guid: a9e9f4caed5c8b3459fea57cc55ec92c, type: 3}
+    groundMaterial: {fileID: 2100000, guid: 01eb8e54c09145547be2a9a3a69cdbd3, type: 2}
+  - index: 5
+    groundType: 1
+    groundMesh: {fileID: 4300000, guid: 15a1ea06e83103440bd5e82179b38bdc, type: 3}
+    groundMaterial: {fileID: 2100000, guid: 01eb8e54c09145547be2a9a3a69cdbd3, type: 2}
+  - index: 6
+    groundType: 1
+    groundMesh: {fileID: 4300000, guid: a681a6ad3bf50c24b912ed8f3a77ab81, type: 3}
+    groundMaterial: {fileID: 2100000, guid: 01eb8e54c09145547be2a9a3a69cdbd3, type: 2}
+  - index: 7
+    groundType: 1
+    groundMesh: {fileID: 4300000, guid: df619ced568bc47499f2c558ee37d874, type: 3}
+    groundMaterial: {fileID: 2100000, guid: 01eb8e54c09145547be2a9a3a69cdbd3, type: 2}
+  - index: 8
+    groundType: 1
+    groundMesh: {fileID: 4300000, guid: 6606bdf622f015e4da9615176510f100, type: 3}
+    groundMaterial: {fileID: 2100000, guid: 01eb8e54c09145547be2a9a3a69cdbd3, type: 2}
+  - index: 9
+    groundType: 1
+    groundMesh: {fileID: 4300000, guid: 5b51950e887765447935dde6839430af, type: 3}
+    groundMaterial: {fileID: 2100000, guid: 01eb8e54c09145547be2a9a3a69cdbd3, type: 2}
+  - index: 10
+    groundType: 1
+    groundMesh: {fileID: 4300000, guid: ea47c4544ae21484e919b93a8b53d0ce, type: 3}
+    groundMaterial: {fileID: 2100000, guid: 01eb8e54c09145547be2a9a3a69cdbd3, type: 2}
+  - index: 11
+    groundType: 1
+    groundMesh: {fileID: 4300000, guid: 3ded5ed0b8b9eb14ca8980a359fba756, type: 3}
+    groundMaterial: {fileID: 2100000, guid: 01eb8e54c09145547be2a9a3a69cdbd3, type: 2}
+  - index: 12
+    groundType: 1
+    groundMesh: {fileID: 4300000, guid: 98e6cec0c090e3f43bf056176813da94, type: 3}
+    groundMaterial: {fileID: 2100000, guid: 01eb8e54c09145547be2a9a3a69cdbd3, type: 2}
+  - index: 13
+    groundType: 1
+    groundMesh: {fileID: 4300000, guid: 6a6bae29eb72c64479882bc98be42169, type: 3}
+    groundMaterial: {fileID: 2100000, guid: 01eb8e54c09145547be2a9a3a69cdbd3, type: 2}
+  - index: 14
+    groundType: 1
+    groundMesh: {fileID: 4300000, guid: dc40f7240bea2474a885c2f8248d22f9, type: 3}
+    groundMaterial: {fileID: 2100000, guid: 01eb8e54c09145547be2a9a3a69cdbd3, type: 2}
+  - index: 15
+    groundType: 1
+    groundMesh: {fileID: 4300000, guid: 2f25153b512f8c343876df52becc15ce, type: 3}
+    groundMaterial: {fileID: 2100000, guid: 01eb8e54c09145547be2a9a3a69cdbd3, type: 2}
+  - index: 16
+    groundType: 1
+    groundMesh: {fileID: 4300000, guid: 072496a5afe7e6d4894beb638c882f99, type: 3}
+    groundMaterial: {fileID: 2100000, guid: 01eb8e54c09145547be2a9a3a69cdbd3, type: 2}
+  - index: 17
+    groundType: 1
+    groundMesh: {fileID: 4300000, guid: 554ff2b200a5d1b4c8f658ecb1c0df20, type: 3}
+    groundMaterial: {fileID: 2100000, guid: 01eb8e54c09145547be2a9a3a69cdbd3, type: 2}
+  - index: 18
+    groundType: 1
+    groundMesh: {fileID: 4300000, guid: 3136ed94c8b770f428f67b74c1ad035f, type: 3}
+    groundMaterial: {fileID: 2100000, guid: 01eb8e54c09145547be2a9a3a69cdbd3, type: 2}
+  - index: 19
+    groundType: 1
+    groundMesh: {fileID: 4300000, guid: 3136ed94c8b770f428f67b74c1ad035f, type: 3}
     groundMaterial: {fileID: 2100000, guid: 01eb8e54c09145547be2a9a3a69cdbd3, type: 2}
   cornerPieces:
   - index: 0
-    groundType: 1
-    groundMesh: {fileID: 0}
-    groundMaterial: {fileID: 0}
+    groundType: 2
+    groundMesh: {fileID: 4300000, guid: d6a8d18c85a16fe43811882cec59d2d4, type: 3}
+    groundMaterial: {fileID: 2100000, guid: 01eb8e54c09145547be2a9a3a69cdbd3, type: 2}
+  - index: 1
+    groundType: 2
+    groundMesh: {fileID: 4300000, guid: 29da257e91373c34c99da39b892dee62, type: 3}
+    groundMaterial: {fileID: 2100000, guid: 01eb8e54c09145547be2a9a3a69cdbd3, type: 2}
+  - index: 2
+    groundType: 2
+    groundMesh: {fileID: 4300000, guid: b4c33e064ab57444aa456a84ab607760, type: 3}
+    groundMaterial: {fileID: 2100000, guid: 01eb8e54c09145547be2a9a3a69cdbd3, type: 2}
+  - index: 3
+    groundType: 2
+    groundMesh: {fileID: 4300000, guid: 0bc86bc284287444f9ae1eb39027cacc, type: 3}
+    groundMaterial: {fileID: 2100000, guid: 01eb8e54c09145547be2a9a3a69cdbd3, type: 2}
+  - index: 4
+    groundType: 2
+    groundMesh: {fileID: 4300000, guid: 5873cc9dacf88db47839d0b9d5bd7c36, type: 3}
+    groundMaterial: {fileID: 2100000, guid: 01eb8e54c09145547be2a9a3a69cdbd3, type: 2}
+  - index: 5
+    groundType: 2
+    groundMesh: {fileID: 4300000, guid: 68825f3ff4a5c234bbd803c1094c2c2c, type: 3}
+    groundMaterial: {fileID: 2100000, guid: 01eb8e54c09145547be2a9a3a69cdbd3, type: 2}
+  - index: 6
+    groundType: 2
+    groundMesh: {fileID: 4300000, guid: c0b29690fe786a045969f8b6789e3a3f, type: 3}
+    groundMaterial: {fileID: 2100000, guid: 01eb8e54c09145547be2a9a3a69cdbd3, type: 2}
+  - index: 7
+    groundType: 2
+    groundMesh: {fileID: 4300000, guid: 8eb1a9baac4af0b469d35d76f07032af, type: 3}
+    groundMaterial: {fileID: 2100000, guid: 01eb8e54c09145547be2a9a3a69cdbd3, type: 2}
+  - index: 8
+    groundType: 2
+    groundMesh: {fileID: 4300000, guid: 2a4a9e8de552ed642a219b118e2a515e, type: 3}
+    groundMaterial: {fileID: 2100000, guid: 01eb8e54c09145547be2a9a3a69cdbd3, type: 2}
+  - index: 9
+    groundType: 2
+    groundMesh: {fileID: 4300000, guid: c8157e8492fe8b340810b45900fed67d, type: 3}
+    groundMaterial: {fileID: 2100000, guid: 01eb8e54c09145547be2a9a3a69cdbd3, type: 2}
+  - index: 10
+    groundType: 2
+    groundMesh: {fileID: 4300000, guid: 5897104df20835148ac81c0d553d5e9e, type: 3}
+    groundMaterial: {fileID: 2100000, guid: 01eb8e54c09145547be2a9a3a69cdbd3, type: 2}
+  - index: 11
+    groundType: 2
+    groundMesh: {fileID: 4300000, guid: 096e60aebed68084dac0c902ceb9e0b9, type: 3}
+    groundMaterial: {fileID: 2100000, guid: 01eb8e54c09145547be2a9a3a69cdbd3, type: 2}
+  - index: 12
+    groundType: 2
+    groundMesh: {fileID: 4300000, guid: 79c6e3c769c1e4a439058a3c972218af, type: 3}
+    groundMaterial: {fileID: 2100000, guid: 01eb8e54c09145547be2a9a3a69cdbd3, type: 2}
+  - index: 13
+    groundType: 2
+    groundMesh: {fileID: 4300000, guid: 1e359cefd6bbd27478f5184c432acf0e, type: 3}
+    groundMaterial: {fileID: 2100000, guid: 01eb8e54c09145547be2a9a3a69cdbd3, type: 2}
+  - index: 14
+    groundType: 2
+    groundMesh: {fileID: 4300000, guid: 8f3a79778020fa1438b0cb1a3f89c5f6, type: 3}
+    groundMaterial: {fileID: 2100000, guid: 01eb8e54c09145547be2a9a3a69cdbd3, type: 2}
+  - index: 15
+    groundType: 2
+    groundMesh: {fileID: 4300000, guid: fc3de57009258d64580ba5188f22a084, type: 3}
+    groundMaterial: {fileID: 2100000, guid: 01eb8e54c09145547be2a9a3a69cdbd3, type: 2}
+  - index: 16
+    groundType: 2
+    groundMesh: {fileID: 4300000, guid: 66b7f416ccbbf4e40834a3c0e32f6866, type: 3}
+    groundMaterial: {fileID: 2100000, guid: 01eb8e54c09145547be2a9a3a69cdbd3, type: 2}
+  - index: 17
+    groundType: 2
+    groundMesh: {fileID: 4300000, guid: 8279806bce4ae3841b620992e1a02c5b, type: 3}
+    groundMaterial: {fileID: 2100000, guid: 01eb8e54c09145547be2a9a3a69cdbd3, type: 2}
+  - index: 18
+    groundType: 2
+    groundMesh: {fileID: 4300000, guid: 6da7a41dbc8b199458c99727ff2c4b40, type: 3}
+    groundMaterial: {fileID: 2100000, guid: 01eb8e54c09145547be2a9a3a69cdbd3, type: 2}
+  - index: 19
+    groundType: 2
+    groundMesh: {fileID: 4300000, guid: 0437f142a95f34447afcf80f57e35101, type: 3}
+    groundMaterial: {fileID: 2100000, guid: 01eb8e54c09145547be2a9a3a69cdbd3, type: 2}
+  slantPieces:
+  - index: 0
+    groundType: 3
+    groundMesh: {fileID: 4300000, guid: b5849a7ae636d1a4dbdf8a46d5362590, type: 3}
+    groundMaterial: {fileID: 2100000, guid: 01eb8e54c09145547be2a9a3a69cdbd3, type: 2}
+  - index: 1
+    groundType: 3
+    groundMesh: {fileID: 4300000, guid: 7e57f6552fea84c4686cd5f73ffaea41, type: 3}
+    groundMaterial: {fileID: 2100000, guid: 01eb8e54c09145547be2a9a3a69cdbd3, type: 2}
+  - index: 2
+    groundType: 3
+    groundMesh: {fileID: 4300000, guid: 7625abc1210186f4e896412763de4247, type: 3}
+    groundMaterial: {fileID: 2100000, guid: 01eb8e54c09145547be2a9a3a69cdbd3, type: 2}
+  - index: 3
+    groundType: 3
+    groundMesh: {fileID: 4300000, guid: 99a5a1c47d2344a4d826aba97a8c5809, type: 3}
+    groundMaterial: {fileID: 2100000, guid: 01eb8e54c09145547be2a9a3a69cdbd3, type: 2}
+  - index: 4
+    groundType: 3
+    groundMesh: {fileID: 4300000, guid: a7d7b98cc7090c149811c0d254161287, type: 3}
+    groundMaterial: {fileID: 2100000, guid: 01eb8e54c09145547be2a9a3a69cdbd3, type: 2}

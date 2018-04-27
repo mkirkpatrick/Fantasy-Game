@@ -9,6 +9,7 @@ public class GroundPieceDatabase : ScriptableObject {
     public GroundPiece[] flatPiece;
     public GroundPiece[] straightPieces;
     public GroundPiece[] cornerPieces;
+    public GroundPiece[] slantPieces;
 
     public GroundPiece GetGroundPiece(GroundPiece.GroundType _groundType, int _index) {
         GroundPiece[] groundArray = null;
@@ -23,6 +24,9 @@ public class GroundPieceDatabase : ScriptableObject {
                 break;
             case GroundPiece.GroundType.Corner:
                 groundArray = cornerPieces;
+                break;
+            case GroundPiece.GroundType.Slant:
+                groundArray = slantPieces;
                 break;
         }
 
@@ -41,6 +45,9 @@ public class GroundPieceDatabase : ScriptableObject {
                 break;
             case GroundPiece.GroundType.Corner:
                 indexMax = cornerPieces.Length - 1;
+                break;
+            case GroundPiece.GroundType.Slant:
+                indexMax = slantPieces.Length - 1;
                 break;
         }
 
