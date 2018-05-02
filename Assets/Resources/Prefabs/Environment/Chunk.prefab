@@ -51,3 +51,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 473739d01a9b3384b93cdd4b7626f67e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  chunkData:
+    groundArray: []
+  groundSectionPrefab: {fileID: 1362581654140942, guid: c82f9c0685d749e40895c79b7339cc58,
+    type: 2}
+  groundMaterial: {fileID: 2100000, guid: 01eb8e54c09145547be2a9a3a69cdbd3, type: 2}
+  groundPieces: []

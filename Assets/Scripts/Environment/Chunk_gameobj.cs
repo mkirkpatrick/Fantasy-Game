@@ -6,7 +6,7 @@ public class Chunk_gameobj : MonoBehaviour {
 
     public Chunk chunkData;
 
-    public GameObject groundPrefab;
+    public GameObject groundSectionPrefab;
     public Material groundMaterial;
     public List<GameObject> groundPieces;
 
@@ -44,7 +44,7 @@ public class Chunk_gameobj : MonoBehaviour {
     }
 
     private void CombineMeshes(GameObject[] array) {
-        GameObject newGround = Instantiate(groundPrefab, transform);
+        GameObject newGround = Instantiate(groundSectionPrefab, transform);
         CombineInstance[] combine = new CombineInstance[array.Length];
 
         for (int i = 0; i < array.Length; i++) {

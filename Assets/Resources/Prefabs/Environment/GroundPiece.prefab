@@ -94,4 +94,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 86973d93fe09fd24e964ebf78a54a046, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  groundMesh: {fileID: 0}
+  groundPieceData:
+    index: 0
+    groundType: 0
+    groundMesh: {fileID: 0}
+    groundMaterial: {fileID: 0}
