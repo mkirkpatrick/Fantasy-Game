@@ -28,7 +28,7 @@ public class GroundEditor : EditorWindow {
         groundData = new GroundPiece(0, GroundPiece.GroundType.Flat);
         groundData.index = 0;
 
-        groundPrefab = Resources.Load("Prefabs/GroundPiece") as GameObject;
+        groundPrefab = Resources.Load("Prefabs/Environment/GroundPiece") as GameObject;
     }
 
     void OnGUI() {
@@ -83,13 +83,15 @@ public class GroundEditor : EditorWindow {
             if (Selection.activeGameObject != null)
                 groundPos = Selection.activeGameObject.transform.position;
 
-            //New pieces have scale of 1
-            xScale = 1;
-            zScale = 1;
-
             GameObject newGroundPiece = Instantiate(groundPrefab, groundPos, Quaternion.identity, chunkObj.transform);
+
+            //New pieces match scale
+            newGroundPiece.transform.localScale = Selection.activeGameObject.transform.localScale;
+
             newGroundPiece.name = "GroundPiece";
             newGroundPiece.GetComponent<GroundPiece_gameobj>().groundPieceData = groundData;
+            newGroundPiece.transform.rotation = Selection.activeGameObject.transform.rotation;
+            
             
             Selection.activeGameObject = newGroundPiece;
         }
