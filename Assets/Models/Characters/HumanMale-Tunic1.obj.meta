@@ -1,7 +1,5 @@
 fileFormatVersion: 2
-guid: c6d7dd822942e5645b594868ea8e7e7d
-timeCreated: 1524360577
-licenseType: Free
+guid: fd1978023d6d12945837fe79ac235214
 ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
@@ -33,7 +31,7 @@ ModelImporter:
     400022: Union
     400024: Union_1
     400026: Waist
-    2100000: HumanMale-Tunic1_material
+    2100000: HumanMale-Tunic1_Material
     2300000: Belt
     2300002: Box
     2300004: Box_1
@@ -60,19 +58,19 @@ ModelImporter:
     3300020: Union
     3300022: Union_1
     3300024: Waist
-    4300000: Head
-    4300002: HairHelmet
-    4300004: Chest
-    4300006: Waist
-    4300008: Belt
-    4300010: Box
-    4300012: Box_1
-    4300014: Matrix
-    4300016: Matrix_1
-    4300018: Matrix_2
-    4300020: Matrix_3
-    4300022: Union
-    4300024: Union_1
+    4300000: Belt
+    4300002: Box
+    4300004: Box_1
+    4300006: Chest
+    4300008: HairHelmet
+    4300010: Head
+    4300012: Matrix
+    4300014: Matrix_1
+    4300016: Matrix_2
+    4300018: Matrix_3
+    4300020: Union
+    4300022: Union_1
+    4300024: Waist
   externalObjects: {}
   materials:
     importMaterials: 1
@@ -92,6 +90,7 @@ ModelImporter:
     animationRetargetingWarnings: 
     animationDoRetargetingWarnings: 0
     importAnimatedCustomProperties: 0
+    importConstraints: 0
     animationCompression: 1
     animationRotationError: 0.5
     animationPositionError: 0.5

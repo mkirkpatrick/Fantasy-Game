@@ -29,14 +29,14 @@ MonoBehaviour:
     m_Settings:
       excludeSkybox: 1
   antialiasing:
-    m_Enabled: 1
+    m_Enabled: 0
     m_Settings:
       method: 0
       fxaaSettings:
         preset: 2
       taaSettings:
-        jitterSpread: 0.75
-        sharpen: 0.3
+        jitterSpread: 1
+        sharpen: 0.26
         stationaryBlending: 0.95
         motionBlending: 0.85
   ambientOcclusion:
@@ -83,7 +83,7 @@ MonoBehaviour:
       sampleCount: 10
       frameBlending: 0
   eyeAdaptation:
-    m_Enabled: 1
+    m_Enabled: 0
     m_Settings:
       lowPercent: 45
       highPercent: 95
@@ -120,9 +120,9 @@ MonoBehaviour:
         neutralWhiteLevel: 5.3
         neutralWhiteClip: 10
       basic:
-        postExposure: 1
-        temperature: 0
-        tint: 0
+        postExposure: 0
+        temperature: -3
+        tint: 5
         hueShift: 0
         saturation: 1
         contrast: 1
@@ -313,17 +313,17 @@ MonoBehaviour:
     m_Enabled: 0
     m_Settings:
       colored: 1
-      intensity: 0.5
-      size: 1
-      luminanceContribution: 0.8
+      intensity: 0.1
+      size: 1.5
+      luminanceContribution: 0.5
   vignette:
     m_Enabled: 0
     m_Settings:
       mode: 0
       color: {r: 0, g: 0, b: 0, a: 1}
       center: {x: 0.5, y: 0.5}
-      intensity: 0.45
-      smoothness: 0.2
+      intensity: 0.2
+      smoothness: 0.09
       roundness: 1
       mask: {fileID: 0}
       opacity: 1

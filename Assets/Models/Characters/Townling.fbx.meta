@@ -1,15 +1,76 @@
 fileFormatVersion: 2
-guid: b4c4e676e0c85074190e7c9b92434815
+guid: 03d974a01c8f41a468bbc8593b2db750
 ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
-    100000: //RootNode
-    400000: //RootNode
-    2100000: Straight1_material
-    2300000: //RootNode
-    3300000: //RootNode
-    4300000: Cliff1
-    4300002: Cliff2
+    100000: Belt
+    100002: Box
+    100004: Box_1
+    100006: Chest
+    100008: HairHelmet
+    100010: Head
+    100012: Matrix
+    100014: Matrix_1
+    100016: Matrix_2
+    100018: Matrix_3
+    100020: //RootNode
+    100022: Union
+    100024: Union_1
+    100026: Waist
+    400000: Belt
+    400002: Box
+    400004: Box_1
+    400006: Chest
+    400008: HairHelmet
+    400010: Head
+    400012: Matrix
+    400014: Matrix_1
+    400016: Matrix_2
+    400018: Matrix_3
+    400020: //RootNode
+    400022: Union
+    400024: Union_1
+    400026: Waist
+    2100000: HumanMale-Tunic1_material
+    2300000: Belt
+    2300002: Box
+    2300004: Box_1
+    2300006: Chest
+    2300008: HairHelmet
+    2300010: Head
+    2300012: Matrix
+    2300014: Matrix_1
+    2300016: Matrix_2
+    2300018: Matrix_3
+    2300020: Union
+    2300022: Union_1
+    2300024: Waist
+    3300000: Belt
+    3300002: Box
+    3300004: Box_1
+    3300006: Chest
+    3300008: HairHelmet
+    3300010: Head
+    3300012: Matrix
+    3300014: Matrix_1
+    3300016: Matrix_2
+    3300018: Matrix_3
+    3300020: Union
+    3300022: Union_1
+    3300024: Waist
+    4300000: Head
+    4300002: HairHelmet
+    4300004: Chest
+    4300006: Waist
+    4300008: Belt
+    4300010: Box
+    4300012: Box_1
+    4300014: Matrix
+    4300016: Matrix_1
+    4300018: Matrix_2
+    4300020: Matrix_3
+    4300022: Union
+    4300024: Union_1
   externalObjects: {}
   materials:
     importMaterials: 1
