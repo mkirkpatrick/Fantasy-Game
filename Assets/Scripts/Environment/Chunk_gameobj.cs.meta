@@ -1,11 +1,12 @@
 fileFormatVersion: 2
 guid: 473739d01a9b3384b93cdd4b7626f67e
-timeCreated: 1523502821
-licenseType: Free
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - environmentSectionPrefab: {fileID: 1362581654140942, guid: c82f9c0685d749e40895c79b7339cc58,
+      type: 2}
+  - groundMaterial: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

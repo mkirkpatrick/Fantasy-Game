@@ -5,4 +5,5 @@ using UnityEngine;
 [System.Serializable]
 public class Chunk {
     public List<GroundPiece> groundArray;
+    public List<GrassPiece> grassArray;
 }

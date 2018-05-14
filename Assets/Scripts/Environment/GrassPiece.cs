@@ -5,6 +5,8 @@ using UnityEngine;
 [System.Serializable]
 public class GrassPiece {
 
-    public Color baseColor;
+    public Color color;
     public Vector3 location;
+    public Mesh mesh;
+
 }

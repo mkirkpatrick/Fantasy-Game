@@ -11,7 +11,7 @@ public class GrassPiece_gameobj : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         Material mat = new Material(Shader.Find("Diffuse"));
-        mat.color = grasspieceData.baseColor;
+        mat.color = grasspieceData.color;
         GetComponent<MeshRenderer>().material = mat;
     }
 	

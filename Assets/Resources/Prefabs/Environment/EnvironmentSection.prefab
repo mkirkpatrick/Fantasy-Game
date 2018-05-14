@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 33558298449626424}
   - component: {fileID: 23117212909666470}
   m_Layer: 0
-  m_Name: GroundSection
+  m_Name: EnvironmentSection
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -54,6 +54,7 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 4294967295
   m_Materials:
   - {fileID: 0}
   m_StaticBatchInfo:
