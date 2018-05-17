@@ -54,8 +54,8 @@ public class Chunk_gameobj : MonoBehaviour {
         }
 
         newGround.GetComponent<MeshFilter>().mesh = new Mesh();
-        newGround.GetComponent<MeshFilter>().mesh.CombineMeshes(combine);
-        newGround.GetComponent<MeshRenderer>().material = groundMaterial;
+        newGround.GetComponent<MeshFilter>().mesh.CombineMeshes(combine, false);
+        //newGround.GetComponent<MeshRenderer>().material = groundMaterial;
 
         groundPieces.Add(newGround);
     }

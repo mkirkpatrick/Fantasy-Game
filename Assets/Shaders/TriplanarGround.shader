@@ -1,51 +1,93 @@
-﻿Shader "Custom/TriplanarGround"
-{
-	Properties
-	{
-		_DiffuseMap("Diffuse Map ", 2D) = "white" {}
-	_TextureScale("Texture Scale",float) = 1
-		_TriplanarBlendSharpness("Blend Sharpness",float) = 1
+﻿Shader "Custom/Tri-Planar" {
+	Properties{
+		_Color("Main Color", Color) = (1,1,1,1)
+		_Side("Side", 2D) = "gray" {}
+	_Top("Top", 2D) = "gray" {}
+	_Bottom("Bottom", 2D) = "gray" {}
+	_SideScale("Side Scale", Float) = 2
+		_TopScale("Top Scale", Float) = 2
+		_BottomScale("Bottom Scale", Float) = 2
+		_Glossiness("Smoothness", Range(0,1)) = 0.5
+		_Metallic("Metallic", Range(0,1)) = 0.0
 	}
-		SubShader
-	{
-		Tags{ "RenderType" = "Opaque" }
-		LOD 200
+
+		SubShader{
+		Tags{
+		"Queue" = "Geometry"
+		"IgnoreProjector" = "False"
+		"RenderType" = "Opaque"
+	}
+
+
+		Cull Back
+		ZWrite On
 
 		CGPROGRAM
-#pragma target 3.0
-#pragma surface surf Lambert
+#pragma surface surf Standard fullforwardshadows
+#pragma exclude_renderers flash
 
-		sampler2D _DiffuseMap;
-	float _TextureScale;
-	float _TriplanarBlendSharpness;
-
-	struct Input
-	{
+		struct Input {
 		float3 worldPos;
 		float3 worldNormal;
+
+		float2 uv_Side;
+
+		INTERNAL_DATA
+
 	};
 
-	void surf(Input IN, inout SurfaceOutput o)
-	{
-		// Find our UVs for each axis based on world position of the fragment.
-		half2 yUV = IN.worldPos.xz / _TextureScale;
-		half2 xUV = IN.worldPos.zy / _TextureScale;
-		half2 zUV = IN.worldPos.xy / _TextureScale;
-		// Now do texture samples from our diffuse map with each of the 3 UV set's we've just made.
-		half3 yDiff = tex2D(_DiffuseMap, yUV);
-		half3 xDiff = tex2D(_DiffuseMap, xUV);
-		half3 zDiff = tex2D(_DiffuseMap, zUV);
-		// Get the absolute value of the world normal.
-		// Put the blend weights to the power of BlendSharpness, the higher the value, 
-		// the sharper the transition between the planar maps will be.
-		half3 blendWeights = pow(abs(IN.worldNormal), _TriplanarBlendSharpness);
-		// Divide our blend mask by the sum of it's components, this will make x+y+z=1
-		blendWeights = blendWeights / (blendWeights.x + blendWeights.y + blendWeights.z);
-		// Finally, blend together all three samples based on the blend mask.
-		o.Albedo = xDiff * blendWeights.x + yDiff * blendWeights.y + zDiff * blendWeights.z;
+	sampler2D _Side, _Top, _Bottom;
+
+	float _SideScale, _TopScale, _BottomScale;
+	half _Glossiness;
+	half _Metallic;
+	fixed4 _Color;
+
+	sampler2D _NormalMap;
+
+	void surf(Input IN, inout SurfaceOutputStandard o) {
+		o.Normal = float3(0, 0, 1);
+		float3 n = WorldNormalVector(IN, o.Normal);
+		float3 projNormal = saturate(pow(n * 1.4, 4));
+		float2 invertY = float2(1, -1);
+
+		//Adjustments//
+		fixed3 dY;
+		fixed3 dZ;
+		fixed3 dX;
+		fixed4 cZ;
+		fixed4 cX;
+		fixed4 cY;
+
+
+		// SIDE X
+		float3 x = tex2D(_Side, frac(IN.worldPos.zy * _SideScale)) * abs(n.x);
+
+		// TOP / BOTTOM
+		float3 y = 0;
+		if (n.y > 0) {
+			y = tex2D(_Top, frac(IN.worldPos.zx * _TopScale)) * abs(n.y);
+		}
+		else {
+			y = tex2D(_Bottom, frac(IN.worldPos.zx * _BottomScale)) * abs(n.y);
+		}
+
+		// SIDE Z    
+		float3 z = tex2D(_Side, frac(IN.worldPos.xy * _SideScale)) * abs(n.z);
+
+		//Add Color//
+		cZ.rgb = z * _Color.rgb;
+		cX.rgb = x * _Color.rgb;
+		cY.rgb = y * _Color.rgb;
+
+		o.Albedo = cZ.rgb;
+		o.Albedo = lerp(o.Albedo, cX.rgb, projNormal.x);
+		o.Albedo = lerp(o.Albedo, cY.rgb, projNormal.y);
+
+		o.Metallic = _Metallic;
+		o.Smoothness = _Glossiness;
 	}
 	ENDCG
 	}
-
 		Fallback "Diffuse"
 }

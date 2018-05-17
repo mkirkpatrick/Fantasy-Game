@@ -8,8 +8,7 @@ public class GroundPiece {
 
     public int index;
     public GroundType groundType;
-    public Mesh groundMesh;
-    public Material groundMaterial;
+    public int[] materialIDs;
 
     public GroundPiece(int _index, GroundType _groundType) {
         index = _index;

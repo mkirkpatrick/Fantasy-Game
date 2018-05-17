@@ -4,11 +4,21 @@ ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
     100000: //RootNode
+    100002: Cliff
+    100004: Grass
     400000: //RootNode
+    400002: Cliff
+    400004: Grass
     2100000: Straight4_material
     2300000: //RootNode
+    2300002: Cliff
+    2300004: Grass
     3300000: //RootNode
+    3300002: Cliff
+    3300004: Grass
     4300000: Cliff4
+    4300002: Cliff
+    4300004: Grass
   externalObjects: {}
   materials:
     importMaterials: 1

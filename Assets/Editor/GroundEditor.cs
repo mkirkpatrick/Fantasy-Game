@@ -5,7 +5,6 @@ public class GroundEditor : EditorWindow {
 
     public GroundPieceDatabase groundDatabase;
     public Chunk_gameobj chunkObj;
-    private GameObject groundPrefab;
 
     public GroundPiece groundData;
     public int groundIndexMax = 1;
@@ -27,8 +26,6 @@ public class GroundEditor : EditorWindow {
     void Awake() {
         groundData = new GroundPiece(0, GroundPiece.GroundType.Flat);
         groundData.index = 0;
-
-        groundPrefab = Resources.Load("Prefabs/Environment/GroundPiece") as GameObject;
     }
 
     void OnGUI() {
@@ -42,9 +39,15 @@ public class GroundEditor : EditorWindow {
 
         if (GUI.changed)
         {
-            groundData = groundDatabase.GetGroundPiece(groundData.groundType, groundData.index);
+            if (Selection.activeGameObject.name == "GroundPiece") {
+                Vector3 pos = Selection.activeGameObject.transform.position;
+                DestroyImmediate(Selection.activeGameObject);
+                Selection.activeGameObject = groundDatabase.GetGroundPiece(groundData.groundType, groundData.index);
+                Selection.activeGameObject.transform.parent = chunkObj.transform;
+                Selection.activeGameObject.transform.position = pos;
+            }
+
             groundIndexMax = groundDatabase.GetGroundTypeIndexMax(groundData.groundType);
-            SetSelectedGroundPiece(groundData);
 
             Vector3 newScale = new Vector3(xScale, 1, zScale);
             Selection.activeGameObject.transform.localScale = newScale;
@@ -52,7 +55,14 @@ public class GroundEditor : EditorWindow {
     }
 
     void OnSelectionChange() {
+        if (Selection.activeGameObject.transform.parent.gameObject.name == "GroundPiece") {
+            Debug.Log("Parent");
+            Selection.activeGameObject = Selection.activeGameObject.transform.parent.gameObject;
+        }
+            
+
         if (Selection.activeGameObject != null) {
+            
             groundData = Selection.activeGameObject.GetComponent<GroundPiece_gameobj>().groundPieceData;
             xScale = (int)Selection.activeGameObject.transform.localScale.x;
             zScale = (int)Selection.activeGameObject.transform.localScale.z;
@@ -79,19 +89,19 @@ public class GroundEditor : EditorWindow {
         GUILayout.BeginHorizontal();
         if (GUI.Button(new Rect( 10f, 40f, 120f, 20f), "Create Piece")) {
             Vector3 groundPos = chunkObj.transform.position;
+            Vector3 groundRot = chunkObj.transform.eulerAngles;
 
             if (Selection.activeGameObject != null)
                 groundPos = Selection.activeGameObject.transform.position;
 
-            GameObject newGroundPiece = Instantiate(groundPrefab, groundPos, Quaternion.identity, chunkObj.transform);
+            GameObject newGroundPiece = groundDatabase.GetGroundPiece(groundData.groundType, groundData.index);
+            newGroundPiece.transform.parent = chunkObj.transform;
+            newGroundPiece.transform.position = groundPos;
 
             //New pieces match scale
             newGroundPiece.transform.localScale = Selection.activeGameObject.transform.localScale;
 
-            newGroundPiece.name = "GroundPiece";
-            newGroundPiece.GetComponent<GroundPiece_gameobj>().groundPieceData = groundData;
-            newGroundPiece.transform.rotation = Selection.activeGameObject.transform.rotation;
-            
+            newGroundPiece.transform.eulerAngles = groundRot;
             
             Selection.activeGameObject = newGroundPiece;
         }
@@ -230,8 +240,6 @@ public class GroundEditor : EditorWindow {
 
     //Action Functions
     private void SetSelectedGroundPiece(GroundPiece _groundPiece) {
-        GroundPiece_gameobj groundPiece = Selection.activeGameObject.GetComponent<GroundPiece_gameobj>();
-        groundPiece.groundPieceData = _groundPiece;
-        groundPiece.SetGroundPiece(_groundPiece);
+       
     }
 }
