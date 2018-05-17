@@ -41,10 +41,13 @@ public class GroundEditor : EditorWindow {
         {
             if (Selection.activeGameObject.name == "GroundPiece") {
                 Vector3 pos = Selection.activeGameObject.transform.position;
+                Vector3 groundRot = Selection.activeGameObject.transform.localEulerAngles;
                 DestroyImmediate(Selection.activeGameObject);
                 Selection.activeGameObject = groundDatabase.GetGroundPiece(groundData.groundType, groundData.index);
                 Selection.activeGameObject.transform.parent = chunkObj.transform;
                 Selection.activeGameObject.transform.position = pos;
+                Selection.activeGameObject.transform.eulerAngles = groundRot;
+
             }
 
             groundIndexMax = groundDatabase.GetGroundTypeIndexMax(groundData.groundType);
@@ -56,7 +59,6 @@ public class GroundEditor : EditorWindow {
 
     void OnSelectionChange() {
         if (Selection.activeGameObject.transform.parent.gameObject.name == "GroundPiece") {
-            Debug.Log("Parent");
             Selection.activeGameObject = Selection.activeGameObject.transform.parent.gameObject;
         }
             
@@ -89,8 +91,8 @@ public class GroundEditor : EditorWindow {
         GUILayout.BeginHorizontal();
         if (GUI.Button(new Rect( 10f, 40f, 120f, 20f), "Create Piece")) {
             Vector3 groundPos = chunkObj.transform.position;
-            Vector3 groundRot = chunkObj.transform.eulerAngles;
-
+            Vector3 groundRot = Selection.activeGameObject.transform.localEulerAngles;
+            
             if (Selection.activeGameObject != null)
                 groundPos = Selection.activeGameObject.transform.position;
 
@@ -98,10 +100,10 @@ public class GroundEditor : EditorWindow {
             newGroundPiece.transform.parent = chunkObj.transform;
             newGroundPiece.transform.position = groundPos;
 
+            newGroundPiece.transform.eulerAngles = groundRot;
+
             //New pieces match scale
             newGroundPiece.transform.localScale = Selection.activeGameObject.transform.localScale;
-
-            newGroundPiece.transform.eulerAngles = groundRot;
             
             Selection.activeGameObject = newGroundPiece;
         }

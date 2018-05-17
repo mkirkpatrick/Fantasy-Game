@@ -43,20 +43,30 @@ public class Chunk_gameobj : MonoBehaviour {
         }
     }
 
-    private void CombineGroundMeshes(GameObject[] array) {
-        GameObject newGround = Instantiate(environmentSectionPrefab, transform);
-        CombineInstance[] combine = new CombineInstance[array.Length];
+    private void BuildGrassMeshes(GameObject[] array) {
 
-        for (int i = 0; i < array.Length; i++) {
-            combine[i].mesh = array[i].GetComponent<MeshFilter>().sharedMesh;
-            combine[i].transform = array[i].transform.localToWorldMatrix;
-            Destroy(array[i]);
+        int vertexCount = 0;
+        List<Mesh> grassArray = new List<Mesh>();
+
+        foreach (Transform ground in transform)
+        {
+            if (ground.name == "GroundPiece")
+            {
+                Mesh grassMesh = ground.transform.Find("Grass").GetComponent<MeshFilter>().sharedMesh;
+                if (vertexCount < 50000)
+                {
+                    grassArray.Add(ground.gameObject);
+                    vertexCount += grassMesh.vertexCount;
+                }
+                else
+                {
+                    CombineGroundMeshes(grassArray.ToArray());
+                    vertexCount = 0;
+                    grassArray = new List<GameObject>();
+                }
+            }
         }
-
-        newGround.GetComponent<MeshFilter>().mesh = new Mesh();
-        newGround.GetComponent<MeshFilter>().mesh.CombineMeshes(combine, false);
-        //newGround.GetComponent<MeshRenderer>().material = groundMaterial;
-
+    
         groundPieces.Add(newGround);
     }
 
@@ -77,5 +87,22 @@ public class Chunk_gameobj : MonoBehaviour {
         newGrass.GetComponent<MeshRenderer>().material = groundMaterial;
 
         groundPieces.Add(newGrass);
+    }
+
+    private void CombineMeshes(GameObject[] objArray, Material mat) {
+        GameObject newSection = Instantiate(environmentSectionPrefab, transform);
+        CombineInstance[] combine = new CombineInstance[objArray.Length];
+
+        for (int i = 0; i < objArray.Length; i++)
+        {
+            combine[i].mesh = objArray[i].GetComponent<MeshFilter>().sharedMesh;
+            combine[i].transform = objArray[i].transform.localToWorldMatrix;
+        }
+
+        newSection.GetComponent<MeshFilter>().mesh = new Mesh();
+        newSection.GetComponent<MeshFilter>().mesh.CombineMeshes(combine);
+        newSection.GetComponent<MeshRenderer>().material = mat;
+
+        groundPieces.Add(newSection);
     }
 }
