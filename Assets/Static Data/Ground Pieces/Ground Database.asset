@@ -17,9 +17,20 @@ MonoBehaviour:
   flatPiece:
   - {fileID: 1539616437001562, guid: 6eda7e813d2650a488384b4b5309570a, type: 2}
   straightPieces:
-  - {fileID: 1992918753970392, guid: adef0caccd3c11c4c9234ad36072ed18, type: 2}
-  - {fileID: 1722581635543922, guid: 1f5f1e215e98c9048b6bbdb368c3e89d, type: 2}
-  - {fileID: 1722290102744874, guid: 24a935681f7984f4c80ddf5801f7d6ab, type: 2}
-  - {fileID: 1045285267924532, guid: 29e5778d7f2ce154898ea33556f80909, type: 2}
+  - {fileID: 1275407383290948, guid: adef0caccd3c11c4c9234ad36072ed18, type: 2}
+  - {fileID: 1790016368599014, guid: 1f5f1e215e98c9048b6bbdb368c3e89d, type: 2}
+  - {fileID: 1424291263668636, guid: 24a935681f7984f4c80ddf5801f7d6ab, type: 2}
+  - {fileID: 1330114989768226, guid: 29e5778d7f2ce154898ea33556f80909, type: 2}
+  - {fileID: 1943365516594372, guid: b2f6c26426e33a649a09c164494ff9f2, type: 2}
+  - {fileID: 1666767750435230, guid: 0bf103e3cbeee7f4697ee16426068a67, type: 2}
+  - {fileID: 1187739045249906, guid: a60d453cf00b73b48a3b1128a3fb95d3, type: 2}
+  - {fileID: 1164676453455172, guid: be8eb4803dfb8c24ea70c1fd7881c17b, type: 2}
   cornerPieces:
-  - {fileID: 1760722738622808, guid: dacfa8499408163498fcfe8aa294fa89, type: 2}
+  - {fileID: 1390364415959598, guid: dacfa8499408163498fcfe8aa294fa89, type: 2}
+  - {fileID: 1173247877295738, guid: abb06d218fa895a4d9276f73dafde869, type: 2}
+  - {fileID: 1946765898024676, guid: 2e069d968692548469dcce55dbf014ee, type: 2}
+  - {fileID: 1506252056068852, guid: 6e0d898cf4debb94d811a7e3b6475104, type: 2}
+  - {fileID: 1486280966268192, guid: 1d4f8b0119380af4abfc61b3276bc8d2, type: 2}
+  - {fileID: 1687526600568606, guid: 284695ff85013de489b3d3be9654267f, type: 2}
+  - {fileID: 1452699508410880, guid: 2ea2d786c174a7d45b5cccd4ca2d1d61, type: 2}
+  - {fileID: 1631356759593264, guid: 94ac5a22b6ea13647a837f658fa3773e, type: 2}

@@ -7,90 +7,80 @@ public class Chunk_gameobj : MonoBehaviour {
     public Chunk chunkData;
 
     public GameObject environmentSectionPrefab;
-    public Material groundMaterial;
+    public Material[] groundMaterials;
     public List<GameObject> groundPieces;
     public List<GameObject> grassPieces;
 
 	// Use this for initialization
 	void Start () {
         BuildGroundMeshes();
+        BuildCliffMeshes();
         BuildColliders();
+
+        //After consolidating ground meshes, destroy old building blocks
+        DestroyGroundPieces();
 	}
 
+    //Mesh Builders by group
     private void BuildGroundMeshes() {
+
         int vertexCount = 0;
         List<GameObject> groundArray = new List<GameObject>();
-
-        foreach (Transform ground in transform) { 
-            if (ground.name == "GroundPiece") {
-                if (vertexCount < 50000) {
-                    groundArray.Add(ground.gameObject);
-                    vertexCount += ground.gameObject.GetComponent<MeshFilter>().mesh.vertexCount;
-                }    
-                else {
-                    CombineGroundMeshes(groundArray.ToArray());
-                    vertexCount = 0;
-                    groundArray = new List<GameObject>();
-                }
-            }
-        }
-        if (groundArray.Count > 0)
-            CombineGroundMeshes(groundArray.ToArray());
-    }
-    private void BuildColliders() {
-        foreach (GameObject ground in groundPieces) {
-            ground.AddComponent<MeshCollider>();
-        }
-    }
-
-    private void BuildGrassMeshes(GameObject[] array) {
-
-        int vertexCount = 0;
-        List<Mesh> grassArray = new List<Mesh>();
 
         foreach (Transform ground in transform)
         {
             if (ground.name == "GroundPiece")
             {
-                Mesh grassMesh = ground.transform.Find("Grass").GetComponent<MeshFilter>().sharedMesh;
-                if (vertexCount < 50000)
+                GameObject groundObj = ground.Find("Ground").gameObject;
+
+                if (vertexCount > 50000)
                 {
-                    grassArray.Add(ground.gameObject);
-                    vertexCount += grassMesh.vertexCount;
-                }
-                else
-                {
-                    CombineGroundMeshes(grassArray.ToArray());
+                    CombineMeshes(groundArray.ToArray(), groundMaterials[0]);
                     vertexCount = 0;
-                    grassArray = new List<GameObject>();
+                    groundArray = new List<GameObject>();
                 }
+
+                groundArray.Add(groundObj);
+                vertexCount += groundObj.GetComponent<MeshFilter>().sharedMesh.vertexCount;
             }
         }
-    
-        groundPieces.Add(newGround);
+        if(groundArray.Count > 0)
+            CombineMeshes(groundArray.ToArray(), groundMaterials[0]);
     }
 
-    private void CombineGrassMeshes(GameObject[] grassArray)
+    private void BuildCliffMeshes()
     {
-        GameObject newGrass = Instantiate(environmentSectionPrefab, transform);
-        CombineInstance[] combine = new CombineInstance[grassArray.Length];
 
-        for (int i = 0; i < grassArray.Length; i++)
+        int vertexCount = 0;
+        List<GameObject> cliffArray = new List<GameObject>();
+
+        foreach (Transform ground in transform)
         {
-            combine[i].mesh = grassArray[i].GetComponent<MeshFilter>().sharedMesh;
-            combine[i].transform = grassArray[i].transform.localToWorldMatrix;
-            Destroy(grassArray[i]);
+            if (ground.name == "GroundPiece" && 
+                ground.gameObject.GetComponent<GroundPiece_gameobj>().groundPieceData.groundType != GroundPiece.GroundType.Flat)
+            {
+                GameObject cliffObj = ground.Find("Cliff").gameObject;
+
+                if (vertexCount > 50000)
+                {
+                    CombineMeshes(cliffArray.ToArray(), groundMaterials[1]);
+                    vertexCount = 0;
+                    cliffArray = new List<GameObject>();
+                }
+
+                cliffArray.Add(cliffObj);
+                vertexCount += cliffObj.GetComponent<MeshFilter>().sharedMesh.vertexCount;
+            }
         }
-
-        newGrass.GetComponent<MeshFilter>().mesh = new Mesh();
-        newGrass.GetComponent<MeshFilter>().mesh.CombineMeshes(combine);
-        newGrass.GetComponent<MeshRenderer>().material = groundMaterial;
-
-        groundPieces.Add(newGrass);
+        if (cliffArray.Count > 0)
+            CombineMeshes(cliffArray.ToArray(), groundMaterials[1]);
     }
 
+    //Utility functions
     private void CombineMeshes(GameObject[] objArray, Material mat) {
         GameObject newSection = Instantiate(environmentSectionPrefab, transform);
+        newSection.name = "Ground Section";
+
         CombineInstance[] combine = new CombineInstance[objArray.Length];
 
         for (int i = 0; i < objArray.Length; i++)
@@ -104,5 +94,21 @@ public class Chunk_gameobj : MonoBehaviour {
         newSection.GetComponent<MeshRenderer>().material = mat;
 
         groundPieces.Add(newSection);
+    }
+
+    private void BuildColliders()
+    {
+        foreach (GameObject ground in groundPieces)
+        {
+            ground.AddComponent<MeshCollider>();
+        }
+    }
+
+    private void DestroyGroundPieces() {
+        foreach (Transform ground in transform)
+        {
+            if(ground.name == "GroundPiece")
+                Destroy(ground.gameObject);
+        }
     }
 }

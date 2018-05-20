@@ -1,81 +1,21 @@
 fileFormatVersion: 2
-guid: 03d974a01c8f41a468bbc8593b2db750
+guid: 9cda1adb3caeee34a87c554984bd5e48
 ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
-    100000: Belt
-    100002: Box
-    100004: Box_1
-    100006: Chest
-    100008: HairHelmet
-    100010: Head
-    100012: Matrix
-    100014: Matrix_2
-    100016: Matrix_3
-    100018: Matrix_4
-    100020: Matrix_5
-    100022: //RootNode
-    100024: Union
-    100026: Union_1
-    100028: Waist
-    400000: Belt
-    400002: Box
-    400004: Box_1
-    400006: Chest
-    400008: HairHelmet
-    400010: Head
-    400012: Matrix
-    400014: Matrix_2
-    400016: Matrix_3
-    400018: Matrix_4
-    400020: Matrix_5
-    400022: //RootNode
-    400024: Union
-    400026: Union_1
-    400028: Waist
-    2100000: Townling_material
-    2300000: Belt
-    2300002: Box
-    2300004: Box_1
-    2300006: Chest
-    2300008: HairHelmet
-    2300010: Head
-    2300012: Matrix
-    2300014: Matrix_2
-    2300016: Matrix_3
-    2300018: Matrix_4
-    2300020: Matrix_5
-    2300022: Union
-    2300024: Union_1
-    2300026: Waist
-    3300000: Belt
-    3300002: Box
-    3300004: Box_1
-    3300006: Chest
-    3300008: HairHelmet
-    3300010: Head
-    3300012: Matrix
-    3300014: Matrix_2
-    3300016: Matrix_3
-    3300018: Matrix_4
-    3300020: Matrix_5
-    3300022: Union
-    3300024: Union_1
-    3300026: Waist
-    4300000: Head
-    4300002: HairHelmet
-    4300004: Chest
-    4300006: Waist
-    4300008: Belt
-    4300010: Box
-    4300012: Box_1
-    4300014: Matrix
-    4300016: Matrix_2
-    4300018: Union
-    4300020: Union_1
-    4300022: Matrix_3
-    4300024: Matrix_4
-    4300026: Matrix_5
+    100000: Cliff
+    100002: Ground
+    100004: //RootNode
+    400000: Cliff
+    400002: Ground
+    400004: //RootNode
+    2100000: Straight6_material
+    2300000: Cliff
+    2300002: Ground
+    3300000: Cliff
+    3300002: Ground
+    4300000: Cliff
+    4300002: Ground
   externalObjects: {}
   materials:
     importMaterials: 1
