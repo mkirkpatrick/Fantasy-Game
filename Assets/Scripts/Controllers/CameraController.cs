@@ -7,44 +7,44 @@ public class CameraController : MonoBehaviour {
     public Transform player;
     public Transform target;
 
-    public float height;
-    public float distance;
+    public float distance = 5.0f;
+    public float xSpeed = 120.0f;
+    public float ySpeed = 120.0f;
 
-    public float rotateSpeedX;
-    public float rotateSpeedY;
-
-    public float angle;
-    public float yMinLimit = -40f;
+    public float yMinLimit = -20f;
     public float yMaxLimit = 80f;
+
+    public float distanceMin = .5f;
+    public float distanceMax = 15f;
 
     float x = 0.0f;
     float y = 0.0f;
-
+    public float angle = 30;
 
     // Use this for initialization
-    void Start () {
+    void Start() {
+    
+    }
 
-	}
-	
-	// Update is called once per frame
-	void Update () {
+    void LateUpdate() {
 
-        x += Input.GetAxis("Mouse X") * rotateSpeedX * distance * Time.deltaTime;
-        y -= Input.GetAxis("Mouse Y") * rotateSpeedY * Time.deltaTime;
+        angle -= Input.GetAxis("Mouse Y") * ySpeed * Time.deltaTime;
 
-        y = ClampAngle(y, yMinLimit, yMaxLimit);
+        //Clamp data
+        angle = ClampAngle(angle, yMinLimit, yMaxLimit);
+        distance = Mathf.Clamp(distance, distanceMin, distanceMax);
 
-        Quaternion rotation = Quaternion.Euler(y, x, 0);
+        float radians = Mathf.Deg2Rad * angle;
 
-        Vector3 negDistance = new Vector3(0.0f, 0.0f, -distance);
-        Vector3 position = rotation * negDistance + target.position;
+        x = Mathf.Cos(radians) * -distance;
+        y = Mathf.Sin(radians) * distance;
 
-        transform.rotation = rotation;
-        transform.position = position;
+        Vector3 newPos = player.position + (player.forward * x) + (player.up * y);
 
-        angle += rotateSpeedY * -Input.GetAxis("Mouse Y");
+        transform.position = newPos;
+
         transform.LookAt(target);
-	}
+    }
 
     public static float ClampAngle(float angle, float min, float max)
     {
