@@ -17,6 +17,8 @@ public class CameraController : MonoBehaviour {
     public float distanceMin = .5f;
     public float distanceMax = 15f;
 
+    //public float offsetX = 1f;
+
     float x = 0.0f;
     float y = 0.0f;
     public float angle = 30;

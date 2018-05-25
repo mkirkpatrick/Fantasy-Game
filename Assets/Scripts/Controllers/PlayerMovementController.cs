@@ -23,7 +23,7 @@ public class PlayerMovementController : MonoBehaviour
         float moveHorizontal = Input.GetAxis("Horizontal");
         float moveVertical = Input.GetAxis("Vertical");
 
-        rotation += rotateSpeed * Input.GetAxis("Mouse X");
+        rotation += rotateSpeed * Input.GetAxis("Mouse X") * Time.deltaTime;
 
         transform.Translate(moveHorizontal * moveSpeed * Time.deltaTime, 0, moveVertical * moveSpeed * Time.deltaTime);
         transform.eulerAngles = new Vector3(0f, rotation, 0f);

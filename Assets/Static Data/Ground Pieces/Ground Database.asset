@@ -13,7 +13,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   materials:
   - {fileID: 2100000, guid: 01eb8e54c09145547be2a9a3a69cdbd3, type: 2}
-  - {fileID: 2100000, guid: 56f2708ab5c6d6b45beb99aa30f2376c, type: 2}
+  - {fileID: 2100000, guid: 5826dec36bc01c247a76f6363871f54b, type: 2}
+  - {fileID: 2100000, guid: 0942284dd872546499160b87a2b5f753, type: 2}
   flatPiece:
   - {fileID: 1539616437001562, guid: 6eda7e813d2650a488384b4b5309570a, type: 2}
   straightPieces:
@@ -34,3 +35,9 @@ MonoBehaviour:
   - {fileID: 1687526600568606, guid: 284695ff85013de489b3d3be9654267f, type: 2}
   - {fileID: 1452699508410880, guid: 2ea2d786c174a7d45b5cccd4ca2d1d61, type: 2}
   - {fileID: 1631356759593264, guid: 94ac5a22b6ea13647a837f658fa3773e, type: 2}
+  - {fileID: 1336014415814786, guid: e676bcf0965dccd4e81a137b4f1c9e14, type: 2}
+  - {fileID: 1391313902543696, guid: 0a8aa978a176a774c96be69d67ac56ad, type: 2}
+  rampPieces:
+  - {fileID: 1744657864037760, guid: f8c246c63abed7f4db5b32fa4ab05495, type: 2}
+  pathPieces:
+  - {fileID: 1354086190846846, guid: a3033ccfaca8e194bb8b0b3976817459, type: 2}

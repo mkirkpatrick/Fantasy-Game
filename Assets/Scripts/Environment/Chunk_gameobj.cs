@@ -15,6 +15,7 @@ public class Chunk_gameobj : MonoBehaviour {
 	void Start () {
         BuildGroundMeshes();
         BuildCliffMeshes();
+        BuildPathMeshes();
         BuildColliders();
 
         //After consolidating ground meshes, destroy old building blocks
@@ -56,26 +57,59 @@ public class Chunk_gameobj : MonoBehaviour {
 
         foreach (Transform ground in transform)
         {
-            if (ground.name == "GroundPiece" && 
-                ground.gameObject.GetComponent<GroundPiece_gameobj>().groundPieceData.groundType != GroundPiece.GroundType.Flat)
-            {
-                GameObject cliffObj = ground.Find("Cliff").gameObject;
 
-                if (vertexCount > 50000)
-                {
-                    CombineMeshes(cliffArray.ToArray(), groundMaterials[1]);
-                    vertexCount = 0;
-                    cliffArray = new List<GameObject>();
+            if (ground.name == "GroundPiece") {
+                GroundPiece.GroundType groundType = ground.gameObject.GetComponent<GroundPiece_gameobj>().groundPieceData.groundType;
+
+                if (groundType == GroundPiece.GroundType.Straight || groundType == GroundPiece.GroundType.Corner || groundType == GroundPiece.GroundType.Ramp) {
+
+                    GameObject cliffObj = ground.Find("Cliff").gameObject;
+
+                    if (vertexCount > 50000)
+                    {
+                        CombineMeshes(cliffArray.ToArray(), groundMaterials[1]);
+                        vertexCount = 0;
+                        cliffArray = new List<GameObject>();
+                    }
+
+                    cliffArray.Add(cliffObj);
+                    vertexCount += cliffObj.GetComponent<MeshFilter>().sharedMesh.vertexCount;
                 }
-
-                cliffArray.Add(cliffObj);
-                vertexCount += cliffObj.GetComponent<MeshFilter>().sharedMesh.vertexCount;
             }
         }
         if (cliffArray.Count > 0)
             CombineMeshes(cliffArray.ToArray(), groundMaterials[1]);
     }
 
+    private void BuildPathMeshes()
+    {
+
+        int vertexCount = 0;
+        List<GameObject> pathArray = new List<GameObject>();
+
+        foreach (Transform ground in transform) {
+
+            if (ground.name == "GroundPiece") {
+                GroundPiece.GroundType groundType = ground.gameObject.GetComponent<GroundPiece_gameobj>().groundPieceData.groundType;
+
+                if (groundType == GroundPiece.GroundType.Path) {
+
+                    GameObject pathObj = ground.Find("Dirt").gameObject;
+
+                    if (vertexCount > 50000) {
+                        CombineMeshes(pathArray.ToArray(), groundMaterials[2]);
+                        vertexCount = 0;
+                        pathArray = new List<GameObject>();
+                    }
+
+                    pathArray.Add(pathObj);
+                    vertexCount += pathObj.GetComponent<MeshFilter>().sharedMesh.vertexCount;
+                }
+            }
+        }
+        if (pathArray.Count > 0)
+            CombineMeshes(pathArray.ToArray(), groundMaterials[2]);
+    }
     //Utility functions
     private void CombineMeshes(GameObject[] objArray, Material mat) {
         GameObject newSection = Instantiate(environmentSectionPrefab, transform);
