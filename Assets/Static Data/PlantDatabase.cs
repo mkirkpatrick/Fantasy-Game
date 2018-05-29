@@ -7,6 +7,8 @@ using UnityEngine;
 public class PlantDatabase : ScriptableObject {
 
     public Plant[] grassArray;
+    public Plant[] treeArray;
+    public Plant[] bushArray;
 
     public Plant GetPlantObject(Plant.PlantType _plantType, int _index) {
 
