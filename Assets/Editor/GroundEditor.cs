@@ -107,6 +107,11 @@ public class GroundEditor : EditorWindow {
             
             Selection.activeGameObject = newGroundPiece;
         }
+
+        if (GUI.Button(new Rect(10f, 40f, 120f, 20f), "Save Chunk"))
+        {
+            
+        }
         GUILayout.EndHorizontal();
 
         GUILayout.EndArea();
