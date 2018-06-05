@@ -9,7 +9,10 @@ public class GroundPiece {
     public int index;
     public GroundType groundType;
     public int[] materialIDs;
+
     public Vector3 location;
+    public int rotation;
+    public float xScale, yScale;
 
     public GroundPiece(int _index, GroundType _groundType) {
         index = _index;

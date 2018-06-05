@@ -7,6 +7,7 @@ public class GameController : MonoBehaviour {
     public static GameController instance = null;
 
     public StaticDatabase staticDB;
+    public ChunkController chunkController;
 
     // Use this for initialization
     void Awake()

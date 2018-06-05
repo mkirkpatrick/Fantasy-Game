@@ -52,10 +52,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   chunkData:
+    location: {x: 0, y: 0, z: 0}
     groundArray: []
     grassArray: []
   environmentSectionPrefab: {fileID: 1362581654140942, guid: c82f9c0685d749e40895c79b7339cc58,
     type: 2}
-  groundMaterial: {fileID: 2100000, guid: 01eb8e54c09145547be2a9a3a69cdbd3, type: 2}
+  groundMaterials:
+  - {fileID: 2100000, guid: 01eb8e54c09145547be2a9a3a69cdbd3, type: 2}
+  - {fileID: 2100000, guid: 5826dec36bc01c247a76f6363871f54b, type: 2}
   groundPieces: []
   grassPieces: []

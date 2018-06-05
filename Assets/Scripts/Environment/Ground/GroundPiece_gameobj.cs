@@ -8,7 +8,6 @@ public class GroundPiece_gameobj : MonoBehaviour {
     public GroundPiece groundPieceData;
 
 	// Use this for initialization
-	void Awake () {
-
+	void Start () {
 	}
 }

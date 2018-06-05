@@ -108,9 +108,9 @@ public class GroundEditor : EditorWindow {
             Selection.activeGameObject = newGroundPiece;
         }
 
-        if (GUI.Button(new Rect(10f, 40f, 120f, 20f), "Save Chunk"))
+        if (GUI.Button(new Rect(140f, 40f, 120f, 20f), "Save Chunk"))
         {
-            
+            SaveChunkData();
         }
         GUILayout.EndHorizontal();
 
@@ -246,7 +246,20 @@ public class GroundEditor : EditorWindow {
     }
 
     //Action Functions
-    private void SetSelectedGroundPiece(GroundPiece _groundPiece) {
-       
+    private void SaveChunkData( ) {
+        foreach (Transform transform in chunkObj.transform) {
+            if (transform.name == "GroundPiece") {
+                SaveGroundPieceData(transform.GetComponent<GroundPiece_gameobj>());
+                chunkObj.chunkData.groundArray.Add(transform.GetComponent<GroundPiece_gameobj>().groundPieceData);
+            }
+        }
+
+        GameController.instance.chunkController.chunks[chunkObj.chunkData.id] = chunkObj.chunkData;
+    }
+    private void SaveGroundPieceData(GroundPiece_gameobj groundPiece) {
+        groundPiece.groundPieceData.location = groundPiece.transform.position;
+        groundPiece.groundPieceData.rotation = (int)groundPiece.transform.eulerAngles.y;
+        groundPiece.groundPieceData.xScale = groundPiece.transform.localScale.x;
+        groundPiece.groundPieceData.yScale = groundPiece.transform.localScale.z;
     }
 }
