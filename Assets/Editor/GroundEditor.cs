@@ -37,7 +37,7 @@ public class GroundEditor : EditorWindow {
         DrawScale();
         DrawGroundData();
 
-        if (GUI.changed)
+        if (GUI.changed && Selection.activeGameObject != null)
         {
             if (Selection.activeGameObject.name == "GroundPiece") {
                 Vector3 pos = Selection.activeGameObject.transform.position;
@@ -58,18 +58,18 @@ public class GroundEditor : EditorWindow {
     }
 
     void OnSelectionChange() {
-        if (Selection.activeGameObject.transform.parent.gameObject.name == "GroundPiece") {
-            Selection.activeGameObject = Selection.activeGameObject.transform.parent.gameObject;
-        }
-            
 
         if (Selection.activeGameObject != null) {
-            
-            groundData = Selection.activeGameObject.GetComponent<GroundPiece_gameobj>().groundPieceData;
-            xScale = (int)Selection.activeGameObject.transform.localScale.x;
-            zScale = (int)Selection.activeGameObject.transform.localScale.z;
-            Repaint();
 
+            if (Selection.activeGameObject.name == "GroundPiece") {
+
+                Selection.activeGameObject = Selection.activeGameObject.transform.parent.gameObject;
+
+                groundData = Selection.activeGameObject.GetComponent<GroundPiece_gameobj>().groundPieceData;
+                xScale = (int)Selection.activeGameObject.transform.localScale.x;
+                zScale = (int)Selection.activeGameObject.transform.localScale.z;
+                Repaint();
+            }
         }
     }
 
@@ -247,14 +247,18 @@ public class GroundEditor : EditorWindow {
 
     //Action Functions
     private void SaveChunkData( ) {
+
+        Chunk newChunk = ScriptableObject.CreateInstance<Chunk>();
+
+        AssetDatabase.CreateAsset(newChunk, "Assets/NewChunk.asset");
+        AssetDatabase.SaveAssets();
+
         foreach (Transform transform in chunkObj.transform) {
             if (transform.name == "GroundPiece") {
                 SaveGroundPieceData(transform.GetComponent<GroundPiece_gameobj>());
-                chunkObj.chunkData.groundArray.Add(transform.GetComponent<GroundPiece_gameobj>().groundPieceData);
+                newChunk.groundArray.Add(transform.GetComponent<GroundPiece_gameobj>().groundPieceData);
             }
         }
-
-        GameController.instance.chunkController.chunks[chunkObj.chunkData.id] = chunkObj.chunkData;
     }
     private void SaveGroundPieceData(GroundPiece_gameobj groundPiece) {
         groundPiece.groundPieceData.location = groundPiece.transform.position;

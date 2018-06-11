@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028334, g: 0.2257134, b: 0.30692226, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -206,6 +206,16 @@ Prefab:
       propertyPath: chunks.Array.size
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 114498607444221494, guid: 427ba08fe66cf5d41afcfefa7d2f4447,
+        type: 2}
+      propertyPath: chunks.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114498607444221494, guid: 427ba08fe66cf5d41afcfefa7d2f4447,
+        type: 2}
+      propertyPath: currentChunkObjects.Array.size
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 114396984099570380, guid: 427ba08fe66cf5d41afcfefa7d2f4447,
         type: 2}
       propertyPath: chunks.Array.data[0].groundArray.Array.size
@@ -308,7 +318,19 @@ Prefab:
       propertyPath: chunks.Array.data[0].groundArray.Array.data[0].rotation
       value: 90
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 114254115286208692, guid: 427ba08fe66cf5d41afcfefa7d2f4447,
+        type: 2}
+      propertyPath: chunkController
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 114498607444221494, guid: 427ba08fe66cf5d41afcfefa7d2f4447,
+        type: 2}
+      propertyPath: chunks.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: df12aa5c5b5319644b12b0cee34b6f24,
+        type: 2}
+    m_RemovedComponents:
+    - {fileID: 114396984099570380, guid: 427ba08fe66cf5d41afcfefa7d2f4447, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 427ba08fe66cf5d41afcfefa7d2f4447, type: 2}
   m_IsPrefabParent: 0
 --- !u!1 &1578661631

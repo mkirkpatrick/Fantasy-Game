@@ -4,16 +4,22 @@ using UnityEngine;
 
 public class PlayerMovementController : MonoBehaviour
 {
+    private Rigidbody rb;
 
     public float moveSpeed;
     public float rotateSpeed;
 
+    public float jumpHeight;
+
     public float rotation;
 
-    // Use this for initialization
-    void Start()
-    {
+    void Awake() {
+        rb = GetComponent<Rigidbody>();
+    }
 
+    // Use this for initialization
+    void Start() {
+        
     }
 
     // Update is called once per frame
@@ -27,5 +33,10 @@ public class PlayerMovementController : MonoBehaviour
 
         transform.Translate(moveHorizontal * moveSpeed * Time.deltaTime, 0, moveVertical * moveSpeed * Time.deltaTime);
         transform.eulerAngles = new Vector3(0f, rotation, 0f);
+
+        //Jumping
+        if ( Input.GetKeyDown("space") ) {
+            rb.velocity += new Vector3(0, jumpHeight, 0);
+        }
     }
 }

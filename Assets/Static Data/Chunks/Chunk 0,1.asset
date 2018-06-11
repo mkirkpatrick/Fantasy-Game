@@ -1,0 +1,605 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1dbaf8fbe8bcf454589f66b37f4751b9, type: 3}
+  m_Name: Chunk 0,1
+  m_EditorClassIdentifier: 
+  id: 0
+  location: {x: 0, y: 0, z: 0}
+  groundArray:
+  - index: 0
+    groundType: 0
+    materialIDs: 00000000
+    location: {x: 0, y: 0, z: 0}
+    rotation: 0
+    xScale: 10
+    yScale: 10
+  - index: 0
+    groundType: 1
+    materialIDs: 0000000001000000
+    location: {x: 4, y: 0, z: 9}
+    rotation: 90
+    xScale: 1
+    yScale: 1
+  - index: 6
+    groundType: 2
+    materialIDs: 0000000001000000
+    location: {x: 4, y: 0, z: 12}
+    rotation: 180
+    xScale: 1
+    yScale: 1
+  - index: 0
+    groundType: 1
+    materialIDs: 0000000001000000
+    location: {x: 7, y: 0, z: 12}
+    rotation: 180
+    xScale: 1
+    yScale: 1
+  - index: 0
+    groundType: 2
+    materialIDs: 0000000001000000
+    location: {x: 10, y: 0, z: 12}
+    rotation: 180
+    xScale: 1
+    yScale: 1
+  - index: 1
+    groundType: 1
+    materialIDs: 0000000001000000
+    location: {x: 10, y: 0, z: 15}
+    rotation: 90
+    xScale: 1
+    yScale: 1
+  - index: 0
+    groundType: 0
+    materialIDs: 00000000
+    location: {x: 8, y: 0, z: 3}
+    rotation: 0
+    xScale: 6
+    yScale: 16
+  - index: 3
+    groundType: 1
+    materialIDs: 0000000001000000
+    location: {x: 10, y: 0, z: 25}
+    rotation: 90
+    xScale: 1
+    yScale: 1
+  - index: 2
+    groundType: 2
+    materialIDs: 0000000001000000
+    location: {x: 10, y: 0, z: 28}
+    rotation: 90
+    xScale: 1
+    yScale: 1
+  - index: 0
+    groundType: 1
+    materialIDs: 0000000001000000
+    location: {x: 7, y: 0, z: 28}
+    rotation: 0
+    xScale: 1
+    yScale: 1
+  - index: 0
+    groundType: 3
+    materialIDs: 0000000001000000
+    location: {x: 10, y: 0, z: 20}
+    rotation: 90
+    xScale: 1
+    yScale: 1
+  - index: 0
+    groundType: 0
+    materialIDs: 00000000
+    location: {x: -1, y: 2, z: 10}
+    rotation: 0
+    xScale: 8
+    yScale: 6
+  - index: 0
+    groundType: 0
+    materialIDs: 00000000
+    location: {x: 2, y: 2, z: 15}
+    rotation: 0
+    xScale: 14
+    yScale: 4
+  - index: 0
+    groundType: 2
+    materialIDs: 0000000001000000
+    location: {x: -6, y: 0, z: 6}
+    rotation: 270
+    xScale: 1
+    yScale: 1
+  - index: 2
+    groundType: 1
+    materialIDs: 0000000001000000
+    location: {x: -6, y: 0, z: 9}
+    rotation: 270
+    xScale: 1
+    yScale: 1
+  - index: 5
+    groundType: 2
+    materialIDs: 0000000001000000
+    location: {x: -6, y: 0, z: 12}
+    rotation: 270
+    xScale: 1
+    yScale: 1
+  - index: 6
+    groundType: 1
+    materialIDs: 0000000001000000
+    location: {x: -11, y: 0, z: 12}
+    rotation: 180
+    xScale: 1
+    yScale: 1
+  - index: 0
+    groundType: 2
+    materialIDs: 0000000001000000
+    location: {x: -16, y: 0, z: 12}
+    rotation: 270
+    xScale: 1
+    yScale: 1
+  - index: 7
+    groundType: 2
+    materialIDs: 0000000001000000
+    location: {x: -16, y: 0, z: 14}
+    rotation: 270
+    xScale: 1
+    yScale: 1
+  - index: 1
+    groundType: 1
+    materialIDs: 0000000001000000
+    location: {x: -19, y: 0, z: 14}
+    rotation: 180
+    xScale: 1
+    yScale: 1
+  - index: 3
+    groundType: 2
+    materialIDs: 0000000001000000
+    location: {x: -22, y: 0, z: 14}
+    rotation: 270
+    xScale: 1
+    yScale: 1
+  - index: 1
+    groundType: 2
+    materialIDs: 0000000001000000
+    location: {x: -22, y: 0, z: 32}
+    rotation: 0
+    xScale: 1
+    yScale: 1
+  - index: 1
+    groundType: 1
+    materialIDs: 0000000001000000
+    location: {x: -19, y: 0, z: 32}
+    rotation: 0
+    xScale: 1
+    yScale: 1
+  - index: 5
+    groundType: 2
+    materialIDs: 0000000001000000
+    location: {x: -16, y: 0, z: 32}
+    rotation: 0
+    xScale: 1
+    yScale: 1
+  - index: 2
+    groundType: 1
+    materialIDs: 0000000001000000
+    location: {x: -16, y: 0, z: 36}
+    rotation: 270
+    xScale: 1.5
+    yScale: 1
+  - index: 3
+    groundType: 2
+    materialIDs: 0000000001000000
+    location: {x: -16, y: 0, z: 40}
+    rotation: 0
+    xScale: 1
+    yScale: 1
+  - index: 0
+    groundType: 1
+    materialIDs: 0000000001000000
+    location: {x: -13, y: 0, z: 40}
+    rotation: 0
+    xScale: 1
+    yScale: 1
+  - index: 9
+    groundType: 2
+    materialIDs: 0000000001000000
+    location: {x: -22, y: 0, z: 24}
+    rotation: 270
+    xScale: 1
+    yScale: 1
+  - index: 0
+    groundType: 3
+    materialIDs: 0000000001000000
+    location: {x: -22, y: 0, z: 26}
+    rotation: 270
+    xScale: 1
+    yScale: 1
+  - index: 8
+    groundType: 2
+    materialIDs: 0000000001000000
+    location: {x: -22, y: 0, z: 30}
+    rotation: 270
+    xScale: 1
+    yScale: 1
+  - index: 0
+    groundType: 3
+    materialIDs: 0000000001000000
+    location: {x: -22, y: 0, z: 28}
+    rotation: 270
+    xScale: 1
+    yScale: 1
+  - index: 6
+    groundType: 2
+    materialIDs: 0000000001000000
+    location: {x: 4, y: 0, z: 28}
+    rotation: 90
+    xScale: 1
+    yScale: 1
+  - index: 2
+    groundType: 1
+    materialIDs: 0000000001000000
+    location: {x: 4, y: 0, z: 31}
+    rotation: 90
+    xScale: 1
+    yScale: 1
+  - index: 1
+    groundType: 2
+    materialIDs: 0000000001000000
+    location: {x: 4, y: 0, z: 34}
+    rotation: 90
+    xScale: 1
+    yScale: 1
+  - index: 2
+    groundType: 1
+    materialIDs: 0000000001000000
+    location: {x: 1, y: 0, z: 34}
+    rotation: 0
+    xScale: 1
+    yScale: 1
+  - index: 6
+    groundType: 2
+    materialIDs: 0000000001000000
+    location: {x: -2, y: 0, z: 34}
+    rotation: 90
+    xScale: 1
+    yScale: 1
+  - index: 3
+    groundType: 2
+    materialIDs: 0000000001000000
+    location: {x: -2, y: 0, z: 40}
+    rotation: 90
+    xScale: 1
+    yScale: 1
+  - index: 3
+    groundType: 1
+    materialIDs: 0000000001000000
+    location: {x: -2, y: 0, z: 37}
+    rotation: 90
+    xScale: 1
+    yScale: 1
+  - index: 6
+    groundType: 1
+    materialIDs: 0000000001000000
+    location: {x: -7, y: 0, z: 40}
+    rotation: 0
+    xScale: 1
+    yScale: 1
+  - index: 0
+    groundType: 0
+    materialIDs: 00000000
+    location: {x: 8, y: 2, z: 25}
+    rotation: 0
+    xScale: 2
+    yScale: 4
+  - index: 0
+    groundType: 0
+    materialIDs: 00000000
+    location: {x: 6, y: 2, z: 22}
+    rotation: 0
+    xScale: 2
+    yScale: 10
+  - index: 0
+    groundType: 0
+    materialIDs: 00000000
+    location: {x: 14, y: 0, z: 19}
+    rotation: 0
+    xScale: 6
+    yScale: 20
+  - index: 0
+    groundType: 1
+    materialIDs: 0000000001000000
+    location: {x: 4, y: 2, z: 21}
+    rotation: 90
+    xScale: 1
+    yScale: 1
+  - index: 0
+    groundType: 2
+    materialIDs: 0000000001000000
+    location: {x: 4, y: 2, z: 18}
+    rotation: 180
+    xScale: 1
+    yScale: 1
+  - index: 0
+    groundType: 2
+    materialIDs: 0000000001000000
+    location: {x: 4, y: 2, z: 26}
+    rotation: 90
+    xScale: 1
+    yScale: 1
+  - index: 0
+    groundType: 1
+    materialIDs: 0000000001000000
+    location: {x: 1, y: 2, z: 18}
+    rotation: 180
+    xScale: 1
+    yScale: 1
+  - index: 9
+    groundType: 2
+    materialIDs: 0000000001000000
+    location: {x: -2, y: 2, z: 18}
+    rotation: 180
+    xScale: 1
+    yScale: 1
+  - index: 8
+    groundType: 2
+    materialIDs: 0000000001000000
+    location: {x: -4, y: 2, z: 18}
+    rotation: 180
+    xScale: 1
+    yScale: 1
+  - index: 6
+    groundType: 2
+    materialIDs: 0000000001000000
+    location: {x: -6, y: 2, z: 18}
+    rotation: 180
+    xScale: 1
+    yScale: 1
+  - index: 2
+    groundType: 2
+    materialIDs: 0000000001000000
+    location: {x: -6, y: 2, z: 16}
+    rotation: 180
+    xScale: 1
+    yScale: 1
+  - index: 0
+    groundType: 1
+    materialIDs: 0000000001000000
+    location: {x: -9, y: 2, z: 16}
+    rotation: 180
+    xScale: 1
+    yScale: 1
+  - index: 0
+    groundType: 1
+    materialIDs: 0000000001000000
+    location: {x: -13, y: 2, z: 16}
+    rotation: 180
+    xScale: 1
+    yScale: 1
+  - index: 0
+    groundType: 0
+    materialIDs: 00000000
+    location: {x: -10, y: 2, z: 14}
+    rotation: 0
+    xScale: 10
+    yScale: 2
+  - index: 3
+    groundType: 2
+    materialIDs: 0000000001000000
+    location: {x: -16, y: 2, z: 16}
+    rotation: 270
+    xScale: 1
+    yScale: 1
+  - index: 2
+    groundType: 1
+    materialIDs: 0000000001000000
+    location: {x: -16, y: 2, z: 19}
+    rotation: 270
+    xScale: 1
+    yScale: 1
+  - index: 7
+    groundType: 2
+    materialIDs: 0000000001000000
+    location: {x: 2, y: 2, z: 26}
+    rotation: 90
+    xScale: 1
+    yScale: 1
+  - index: 2
+    groundType: 1
+    materialIDs: 0000000001000000
+    location: {x: 2, y: 2, z: 29}
+    rotation: 90
+    xScale: 1
+    yScale: 1
+  - index: 3
+    groundType: 2
+    materialIDs: 0000000001000000
+    location: {x: 2, y: 2, z: 32}
+    rotation: 90
+    xScale: 1
+    yScale: 1
+  - index: 6
+    groundType: 2
+    materialIDs: 0000000001000000
+    location: {x: -8, y: 2, z: 32}
+    rotation: 90
+    xScale: 1
+    yScale: 1
+  - index: 2
+    groundType: 2
+    materialIDs: 0000000001000000
+    location: {x: -8, y: 2, z: 34}
+    rotation: 90
+    xScale: 1
+    yScale: 1
+  - index: 8
+    groundType: 2
+    materialIDs: 0000000001000000
+    location: {x: -10, y: 2, z: 34}
+    rotation: 0
+    xScale: 1
+    yScale: 1
+  - index: 9
+    groundType: 2
+    materialIDs: 0000000001000000
+    location: {x: -12, y: 2, z: 34}
+    rotation: 0
+    xScale: 1
+    yScale: 1
+  - index: 3
+    groundType: 2
+    materialIDs: 0000000001000000
+    location: {x: -14, y: 2, z: 34}
+    rotation: 0
+    xScale: 1
+    yScale: 1
+  - index: 2
+    groundType: 1
+    materialIDs: 0000000001000000
+    location: {x: -14, y: 2, z: 31}
+    rotation: 270
+    xScale: 1
+    yScale: 1
+  - index: 7
+    groundType: 2
+    materialIDs: 0000000001000000
+    location: {x: -14, y: 2, z: 28}
+    rotation: 0
+    xScale: 1
+    yScale: 1
+  - index: 3
+    groundType: 2
+    materialIDs: 0000000001000000
+    location: {x: -16, y: 2, z: 28}
+    rotation: 0
+    xScale: 1
+    yScale: 1
+  - index: 0
+    groundType: 1
+    materialIDs: 0000000001000000
+    location: {x: -16, y: 2, z: 25}
+    rotation: 270
+    xScale: 1
+    yScale: 1
+  - index: 0
+    groundType: 0
+    materialIDs: 00000000
+    location: {x: -19, y: 2, z: 19}
+    rotation: 0
+    xScale: 4
+    yScale: 8
+  - index: 0
+    groundType: 0
+    materialIDs: 00000000
+    location: {x: -18, y: 2, z: 27}
+    rotation: 0
+    xScale: 2
+    yScale: 8
+  - index: 0
+    groundType: 0
+    materialIDs: 00000000
+    location: {x: -16, y: 2, z: 30}
+    rotation: 0
+    xScale: 2
+    yScale: 2
+  - index: 0
+    groundType: 0
+    materialIDs: 00000000
+    location: {x: -9, y: 2, z: 37}
+    rotation: 0
+    xScale: 12
+    yScale: 4
+  - index: 0
+    groundType: 0
+    materialIDs: 00000000
+    location: {x: -5, y: 2, z: 34}
+    rotation: 0
+    xScale: 4
+    yScale: 2
+  - index: 0
+    groundType: 0
+    materialIDs: 00000000
+    location: {x: 1, y: 4, z: 22}
+    rotation: 0
+    xScale: 4
+    yScale: 6
+  - index: 0
+    groundType: 0
+    materialIDs: 00000000
+    location: {x: -6, y: 4, z: 28}
+    rotation: 0
+    xScale: 14
+    yScale: 6
+  - index: 0
+    groundType: 0
+    materialIDs: 00000000
+    location: {x: -14, y: 4, z: 22}
+    rotation: 0
+    xScale: 2
+    yScale: 10
+  - index: 0
+    groundType: 0
+    materialIDs: 00000000
+    location: {x: -10, y: 4, z: 21}
+    rotation: 0
+    xScale: 6
+    yScale: 8
+  - index: 0
+    groundType: 0
+    materialIDs: 00000000
+    location: {x: -6, y: 4, z: 20}
+    rotation: 0
+    xScale: 2
+    yScale: 2
+  - index: 0
+    groundType: 0
+    materialIDs: 00000000
+    location: {x: -4, y: 4, z: 23}
+    rotation: 0
+    xScale: 6
+    yScale: 4
+  - index: 4
+    groundType: 1
+    materialIDs: 0000000001000000
+    location: {x: -1, y: 0, z: 6}
+    rotation: 180
+    xScale: 1
+    yScale: 1
+  - index: 5
+    groundType: 1
+    materialIDs: 0000000001000000
+    location: {x: -22, y: 0, z: 19}
+    rotation: 270
+    xScale: 1
+    yScale: 1
+  - index: 4
+    groundType: 1
+    materialIDs: 0000000001000000
+    location: {x: -3, y: 2, z: 32}
+    rotation: 0
+    xScale: 1
+    yScale: 1
+  - index: 1
+    groundType: 2
+    materialIDs: 0000000001000000
+    location: {x: 4, y: 0, z: 6}
+    rotation: 180
+    xScale: 1
+    yScale: 1
+  - index: 8
+    groundType: 2
+    materialIDs: 0000000001000000
+    location: {x: 10, y: 0, z: 18}
+    rotation: 90
+    xScale: 1
+    yScale: 1
+  - index: 9
+    groundType: 2
+    materialIDs: 0000000001000000
+    location: {x: 10, y: 0, z: 22}
+    rotation: 90
+    xScale: 1
+    yScale: 1
+  grassArray: []

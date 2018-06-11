@@ -34,7 +34,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1298347505653790}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -51,14 +51,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 473739d01a9b3384b93cdd4b7626f67e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  chunkData:
-    location: {x: 0, y: 0, z: 0}
-    groundArray: []
-    grassArray: []
+  chunkData: {fileID: 0}
   environmentSectionPrefab: {fileID: 1362581654140942, guid: c82f9c0685d749e40895c79b7339cc58,
     type: 2}
   groundMaterials:
   - {fileID: 2100000, guid: 01eb8e54c09145547be2a9a3a69cdbd3, type: 2}
   - {fileID: 2100000, guid: 5826dec36bc01c247a76f6363871f54b, type: 2}
+  - {fileID: 2100000, guid: 0942284dd872546499160b87a2b5f753, type: 2}
   groundPieces: []
   grassPieces: []

@@ -12,3 +12,5 @@ MonoBehaviour:
   m_Name: Plant Database
   m_EditorClassIdentifier: 
   grassArray: []
+  treeArray: []
+  bushArray: []
