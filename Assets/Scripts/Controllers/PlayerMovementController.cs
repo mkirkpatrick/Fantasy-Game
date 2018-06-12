@@ -13,13 +13,36 @@ public class PlayerMovementController : MonoBehaviour
 
     public float rotation;
 
+    public static bool isSwimming;
+
+
     void Awake() {
         rb = GetComponent<Rigidbody>();
     }
 
     // Use this for initialization
     void Start() {
-        
+    }
+
+    // Check for water
+    void OnTriggerEnter(Collider collider)
+    {
+        GameObject otherObj = collider.gameObject;
+
+        if (otherObj.name == "Water") {
+            rb.useGravity = false;
+            isSwimming = true;
+        }
+
+    }
+    void OnTriggerExit(Collider collider)
+    {
+        GameObject otherObj = collider.gameObject;
+        if (otherObj.name == "Water")
+        {
+            rb.useGravity = true;
+            isSwimming = false;
+        }
     }
 
     // Update is called once per frame
