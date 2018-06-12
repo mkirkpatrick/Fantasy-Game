@@ -3,6 +3,7 @@ using UnityEngine;
 
 public class HumanAnimationsController : MonoBehaviour {
     public Animator anim;
+    private float randomJump;
     //public GameObject pmc;
 	void Start () {
         anim = GetComponent<Animator>();	
@@ -28,7 +29,14 @@ public class HumanAnimationsController : MonoBehaviour {
 
         if (Input.GetKeyDown("space"))
         {
-            anim.Play("Armature_Jump-quick", -1);
+            randomJump = Random.Range(0f, 1f);
+            Debug.Log(randomJump);
+            if (randomJump <= 0.4f)
+            {
+                anim.Play("Armature_Jump-quick", -1);
+            } else {
+                anim.Play("Armature_Jump-flip", -1);
+            }
         }
 	}
 }
