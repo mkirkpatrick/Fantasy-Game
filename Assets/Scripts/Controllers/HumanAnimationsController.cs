@@ -25,5 +25,10 @@ public class HumanAnimationsController : MonoBehaviour {
         //} else {
         //    pmc.Anim.SetBool("isSwimming", false);
         //}
+
+        if (Input.GetKeyDown("space"))
+        {
+            anim.Play("Armature_Jump-quick", -1);
+        }
 	}
 }

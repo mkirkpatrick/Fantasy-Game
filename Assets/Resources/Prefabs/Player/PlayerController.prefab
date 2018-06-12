@@ -538,6 +538,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4692853030779224}
   - component: {fileID: 95640697554850474}
+  - component: {fileID: 114787419111950774}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -1883,6 +1884,18 @@ MonoBehaviour:
   rotateSpeed: 80
   jumpHeight: 5
   rotation: 0
+--- !u!114 &114787419111950774
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1725312103369426}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa9a5d4abee14431780b86c5c27b11ae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  anim: {fileID: 0}
 --- !u!136 &136063564590355206
 CapsuleCollider:
   m_ObjectHideFlags: 1
